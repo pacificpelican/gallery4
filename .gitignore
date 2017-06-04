@@ -51,3 +51,5 @@ user_guide_src/cilexer/pycilexer.egg-info/*
 *.sublime-workspace
 nbproject
 Thumbs.db
+
+assets/files
