@@ -37,29 +37,16 @@ public function edit()
 
 			if ($the_l_row['level'] >= 1)
 			{
-				if ($the_l_row['level'] >= USER_LEVEL_STORE)
-				{
-					$pagedata['loggedinfo'] = "<a href='/cart' id='cart_link'><button class='button btn btn-secondary cart_button button primary' id='dark_theme_button'>Cart</button></a> ";
-					$pagedata['loggedinfo'] = $pagedata['loggedinfo'] . "<a href='/purchases' id='turndark'><button class='button btn btn-primary black_button cart_button' id='random_light_background_button'>Purchases</button></a> ";
-				}
 				if ($the_l_row['level'] >= USER_LEVEL_PHOTO_CLIENT)
 				{
-					$pagedata['loggedinfo'] = $pagedata['loggedinfo'] . "<a href='/myphotos' id='turndark'><button class='button secondary btn btn-primary cart_button' id='random_light_background_button2'>My Photos</button></a> ";
-					$pagedata['loggedinfo'] = $pagedata['loggedinfo'] . "<a href='/book'><button class='button success btn btn-info cart_button' id='random_light_background_button'>Book Photo Session</button></a> ";
+					$pagedata['loggedinfo'] = "<a href='/album' id='turndark'><button class='button secondary btn btn-primary cart_button' id='random_light_background_button2'>My Photos</button></a> ";
 				}
 				if ($the_l_row['level'] >= USER_LEVEL_STORE_ADMIN)
 				{
-					$pagedata['loggedinfo'] = $pagedata['loggedinfo'] . " <a href='/gallerys/upload'><button class='btn btn-secondary secondary hollow button' id='uploadClientPhotos'>Upload Client Photos</button></a>";
-					$pagedata['loggedinfo'] = $pagedata['loggedinfo'] . " <a href='/appointments/edit'><button class='btn btn-secondary secondary hollow button' id='manageAppointments'>Manage Photo Appointments</button></a>";
-					$pagedata['loggedinfo'] = $pagedata['loggedinfo'] . " <a href='/photos/packages'><button class='btn btn-primary primary hollow button' id='managePackages'>Manage Photo Packages</button></a>";
-					$pagedata['loggedinfo'] = $pagedata['loggedinfo'] . " <a href='/store/admin'><button id='manage_store_button' class='store_manage button success btn btn-success'>Store Admin</button></a>";
+					$pagedata['loggedinfo'] = $pagedata['loggedinfo'] . " <a href='/gallerys/upload'><button class='btn btn-secondary secondary hollow button' id='uploadClientPhotos'>Upload Photos</button></a>";
 					$pagedata['loggedinfo'] = $pagedata['loggedinfo'] . " <a href='/timeline/edit'><button id='manage_public_timeline_button' class='timeline_manage button secondary btn btn-success'>Public Timeline Admin</button></a> ";
 				}
 		
-				if ($the_l_row['level'] >= USER_LEVEL_MESSAGING)
-				{
-					$pagedata['loggedinfo'] = $pagedata['loggedinfo'] . "<a href='/messages'><button class='button btn btn-secondary orange_button white_text' id='dark_theme_button'>Inbox</button></a>";
-				}
 				if ($the_l_row['level'] >= USER_LEVEL_BLOG_POSTING)
 				{
 					$pagedata['loggedinfo'] = $pagedata['loggedinfo'] . " <a href='/blogs/write'><button id='manage_files_button' class='files_manage button btn btn-info'>Create Blog Post</button></a> ";
