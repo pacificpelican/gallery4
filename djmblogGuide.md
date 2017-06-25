@@ -1,4 +1,6 @@
-lovebirdsconsulting.com cms docs
+Gallery 4 docs
+copyright June 2017 by Dan McKeown
+based on lovebirdsconsulting.com cms docs
 [version number in config/config.php]
 by Dan McKeown
 copyright Febrary-March-May 2016
@@ -11,9 +13,9 @@ Steps to Deployment
 --delete .htaccess based on htaccess.zip [testing] and unzip htaccess-ssl.zip to replace it [deployment]
 --change Stripe API keys to the appropriate live keys in config file
 --make sure site url constant in config is correct [e.g. change from http://localhost:8888 to https://djmblog.com]
---clear database at the least, or forward engineer a new DB from the model at most and uploead the DB
+--clear database of sample content
 --change the DB info in the config file to the correct deployment DB info
---change the SUPERCOiN constant for credit card encryption
+--change the SUPERCOiN constant for credit card encryption [deprecated]
 --create an admin user (can use any name) [users table] with user level 10 or higher [users_levels table]
 --set default permission levels for users in config
 --probably have some products pre-loaded if using the store module
@@ -23,10 +25,10 @@ Steps to Deployment
 
 Concepts
 --Controllers are (largely) severable
-	--If the deployer has no need to for the Chats controller, it can be removed--be sure to remove it from the nav bar (or create a new nav bar partial).  The same should be true for Blogs, Dropboxs, Games, Pages, Pays, and Stores.  
+	--If the deployer has no need to for the Blogs controller, it can be removed--be sure to remove it from the nav bar (or create a new nav bar partial).  The same should be true for Dropboxs, Pages, Pays.  
 	--The Users controller is required for all other controllers to work.  In addition the User model and users helper are necessary for most or all of them.
---Models are used for some database interactions but not all.  The Chat, Pay, and Store models all play key roles in making their respective controllers work but may not be the only place where queries are done.  CodeIgniter's loose (optional) model structure has led me to both use controllers for some data operations and use helpers for some functions--to the point where their roles are not entirely defined as it relates to the User model and users helper.  No controller will cross-rely on any model other then Users--so for example the only controller invoking the Store model is Stores.
---Login is checked for in the web session.  When a user logs in or registers the two variables are placed in the session: 'logged' is set to 1 when a user is logged in by the site and 'login' is set to the user's login.  One or both of these are checked at times to see whether a user is logged in.  In addition to those variables a third variable is sometimes put into the session: one that shows the intended page the user wants after they log in or register: this variable is 'page'.  The pattern used mostly in controllers is to check for login and then redirect the user to the /login page if they are not logged in (after which they will be redirected to 'page' if it exists or to somewhere like /account or the front page otherwise).  If they are logged in, the functionality requested is allowed [provided they pass any users_levels check that may exist] (whether that is opening a page like /messages or /blackjack or honoring a commadn like adding an item to the store).
+--Models are used for some database interactions but not all.  The Pay model all plays a key role in making its controller work but may not be the only place where queries are done.  CodeIgniter's loose (optional) model structure has led me to both use controllers for some data operations and use helpers for some functions--to the point where their roles are not entirely defined as it relates to the User model and users helper.  No controller will cross-rely on any model other then Users--so for example the only controller invoking the Store model is Stores.
+--Login is checked for in the web session.  When a user logs in or registers the two variables are placed in the session: 'logged' is set to 1 when a user is logged in by the site and 'login' is set to the user's login.  One or both of these are checked at times to see whether a user is logged in.  In addition to those variables a third variable is sometimes put into the session: one that shows the intended page the user wants after they log in or register: this variable is 'page'.  The pattern used mostly in controllers is to check for login and then redirect the user to the /login page if they are not logged in (after which they will be redirected to 'page' if it exists or to somewhere like /account or the front page otherwise).  If they are logged in, the functionality requested is allowed (provided they pass any users_levels check that may exist) (whether that is opening a page like /messages or /blackjack or honoring a commadn like adding an item to the store).
 
 Accounts and Access
 --Admin users are based on the users_levels table.  In order to access the store admin page a user must have an entry in the users table (based on signing up) and a level of 10 or more in the users_levels table (users are initally given a level of 1)
@@ -35,14 +37,6 @@ Accounts and Access
 --The user level required to do a range of task is set at a number; however these numbers can easily be changed in the config.php file where they are set as constants for use throughout the app
 --Passwords can be reset using this URL, provided the user entering in the URL is a store admin:
 http://example.com/accounts/password_reset(username)
-
-Store
---tax rate is taken from the tax_rate table, which should only have 1 entry, and is applied to store purchases if the user is in Washington state
---store admin can be done by users with level 10 or higher at /store/admin
---if a user has the level required for store admin, then they can add or remove items (links to the store admin page should show up on their /account page) and change prices
-
-Stocks
---users can look up stock quotes at /quote or /stock or /stock/quote and it uses a 3rd party API
 
 Files
 --files can be uploaded using the Dropboxs controller.  The UI for uploading can be found at /files/upload and the files of a particular logged-in user are listed at /files
@@ -66,12 +60,6 @@ Pages
 --the pages serve based on the alias or title with hyphens instead of spaces, e.g. https://example.com/page/Work-Sheet
 --new pages can be created at /create/pages and can be deleted at edit/pages
 --users with the level required for blog posting can also create and delete their one pages
-
-Messages
---the /messages page acts as in inbox for system messages
---users with the right user level (by default, 1) can send messages to other users
---any user can receive messages if they are logged in
---if the user sends a message to "public" then it appears [newest first; only the latest 37 posts are displayed] on the public timeline at /timeline
 
 SQL security
 In preparation for getting the 0.9.0 version out of beta, a security audit has been done.  Now by the release and deployment to djmblog.com of that version, any raw SQL queries that contain user provided data should be either using the query builder class or use the query bindings (prepared statements) pattern

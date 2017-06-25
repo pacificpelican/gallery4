@@ -5,7 +5,7 @@
 <div class="top-bar" id="big-example-menu">
   <ul class="menu" data-responsive-menu="drilldown medium-dropdown">
       <li><a class="nav-link" href="/blog">Blog</a></li>
-      <li><a class="nav-link" href="/store">Store</a></li>
+      <li><a class="nav-link" href="/album">Photos</a></li>
       <li><a class="nav-link" href="/files">Files</a></li>
       <li><a class="nav-link" href="/pages/edit">Pages</a></li>
       

@@ -8,7 +8,7 @@
 	    	<li class="nav-item active" id="home_link"><a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a></li>
 	    	<li class="nav-item" id="djmblog_link"><a class="nav-link" href="/blog">Blog</a></li>
 			<li class="nav-item">
-	       		<a class="nav-link" href="/store">Store</a>
+	       		<a class="nav-link" href="/album">Photos</a>
 	      	</li>
 	      	  <li class="nav-item" id="messages_link0">
 	        	<a class="nav-link" href="/files">Files</a>
