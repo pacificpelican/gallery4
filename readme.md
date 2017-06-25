@@ -15,7 +15,7 @@ When your site is ready, change the constant "DEFAULT_NEW_USER_LEVEL" in your pr
 After that you can customize the site to your needs.  Edit the views that present the content so it looks the way you want, and modify the controllers for your purposes: visit the [CodeIgniter documentaion](https://www.codeigniter.com/user_guide/) and the [LoveBird homepage](http://lovebird.pacificio.com) to learn more about how to build out your site.
 
 ### Links ###
-- [djmblogGuide](djmblogGuide.md)
+- [gallery4guide](gallery4guide.md)
 - [todo](todo.md)
 - [web site](http://lovebird.pacificio.com)
 - [GitHub](https://github.com/pacificpelican/lovebird)

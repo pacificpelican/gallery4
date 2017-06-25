@@ -9,6 +9,8 @@ Released under MIT License
 
 /*	Application Info   */
 
+const GALLERY4_VERSION = '0.9.10';               //  gallery4.pacificio.com
+
 const LOVEBIRDS_STORE_VERSION = '0.9.9';		//	lovebird.pacificio.com
 
 const CODEIGNITER_SYSTEM_VERSION = '3.1.4';		//	codeigniter.com
@@ -39,13 +41,13 @@ define('DJM_DB_PW', 'root');	//	development (local) site database password
 define('DJM_ENVIRONMENT', 'development');		//	set as 'development' or 'production'
 }
 
-define('SITE_NAME', 'Gallery [4]');		//	Site name, can be URL w/o https:// or whatever the site is called
+define('SITE_NAME', 'Photo Gallery');		//	Site name, can be URL w/o https:// or whatever the site is called
 define('OWNER_NAME', 'OPEN SOURCE/FREE SOFTWARE');	//	Owner's name; controlling company name; or the site URL with no .com [or any TLD]
 
-define('FOOTER_TEXT', 'powered by LoveBird');		//	Words which will appear in footer button
-define('FOOTER_URL', 'http://lovebird.pacificio.com');		//	Where the footer button will link to
+define('FOOTER_TEXT', 'powered by Gallery 4');		//	Words which will appear in footer button
+define('FOOTER_URL', 'http://gallery4.pacificio.com');		//	Where the footer button will link to
 
-define('BLOG_DESCRIPTION', 'A free and open source web software project');		//	Used in RSS feed
+define('BLOG_DESCRIPTION', 'A free and open source web gallery software project');		//	Used in RSS feed
 
 $cI_ENC_KEY = '1eb7c9e66f3b56cougsfddb19037366huskies0f02cfc9a196';	//	CodeIgniter key - should be unique
 
@@ -72,8 +74,6 @@ define('USER_LEVEL_FILE_UPLOADING', 6);		//	What minimum user level is required 
 define('USER_LEVEL_STORE_ADMIN', 10);		//	What minimum user level is required to ADMINISTER THE SITE?
 
 define('ALLOWED_FILE_UPLOAD_TYPES', '*');		//	What type of files are allowed for file upload tool users?
-define('BLACKJACK_STAY', 17);				//	What number should the house stay at in /blackjack?
-define('CARD_ART_LOCATION', SITE_URL . "/assets/images/cards/");	//	Where is the card art for /blackjack?
 
 define('GALLERYS_FILE_URL', '/assets/files/');	//	File upload path for Gallerys controller
 define('GALLERYS_FILE_PATH', '.' . GALLERYS_FILE_URL);
@@ -85,10 +85,9 @@ define('WATERMARK_POSITION_VERTICAL', 'bottom');
 define('WATERMARK_POSITION_HORIZONTAL', 'right');
 define('IMAGE_LIBRARY_PREFERENCE', 'netpbm');	// choose the image processing library: netpbm, imagemagick, gd, gd2
 
-define('PHOTOGRAPHY_PRICE_PER_IMAGE', 2.50);
 define('STATE_TAX_RATE', 0.096);
 define('STATE_TITLE', 'Washington State');
-define('PHOTOGRAPHER_ID', 0);  // the id of the photographer/admin in the users table in the database
+define('PHOTOGRAPHER_ID', 0);  // the id of the photographer/admin in the users table in the database [deprecated]
 
 /* --------------------------------------------------------------------------- /*
 
