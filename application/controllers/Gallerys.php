@@ -156,7 +156,7 @@ public function process_upload()
 				$eXT = null;
 
 				foreach ($result as $key => $value) {
-					$messageTo = $this->photo->uploadGalleryImage($value, $eachCount, $eXT, $newGalleryName, $uid, $customer, $messageTo);
+					$messageTo = $this->photo->uploadGalleryImage($value, $eachCount, $eXT, $newGalleryName, $uid, $customer, $messageTo, $g_id);
 					$eachCount++;
 				}
 

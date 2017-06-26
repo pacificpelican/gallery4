@@ -5,7 +5,7 @@ class Photo extends CI_Model
 	//	Photo model for LoveBird created by Dan McKeown http://danmckeown.info -->
 	//	copyright 2016 -->
 
-function uploadGalleryImage($value, $eachCount, $eXT, $newGalleryName, $uid, $customer, $messageTo)
+function uploadGalleryImage($value, $eachCount, $eXT, $newGalleryName, $uid, $customer, $messageTo, $g_id)
 	{	//	This method uploads a photo and creates a DB entry, it was created to service the Gallerys controller
 		$postdata = array();
 		if ($value['type'] === 'image/jpeg')
