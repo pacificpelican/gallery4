@@ -49,11 +49,11 @@ $(function() {
 			
 		</ul>
 
-		<h3>Gallery 4 is inspired by Gallery 3 and based on LoveBird 0.9.9</h3>
+		<h3>Gallery 4 is inspired by but not affiliated with <a href="http://galleryproject.org/">Gallery</a> 3 and the code for Gallery 4 is based on LoveBird 0.9.9</h3>
 		<li><a href="http://lovebird.pacificio.com"><b><i>lovebird web site</i></b></a></li>
 		<li><a href="https://github.com/pacificpelican/lovebird"><b>lovebird GitHub</b></a></li>
 		<h3>Gallery 4, like LoveBird, is free software.</h3>
-		<h5>LoveBird is written in <a href="http://php.net">PHP</a> and is based on <a href="https://codeigniter.com/">CodeIgniter 3.1</a>.</h5>
+		<h5>LoveBird is written in <a href="http://php.net">PHP</a> and is built on <a href="https://codeigniter.com/">CodeIgniter 3.1</a>.</h5>
 		<p>Gallery 4 and LoveBird code is copyright (c) 2016-2017 <code><a href="http://danmckeown.info">Dan McKeown</a></code> and is released under <a href="../../LICENSE">the MIT License</a>.</p>
 	</aside>
 	

@@ -1,7 +1,7 @@
 [Gallery 4](http://gallery4.pacificio.com): free software to run online photo galleries
 =====
 #### created by [Dan McKeown](http:/danmckeown.info) ####
-#### based on [CodeIgniter](http://codeigniter.com) 3 #### & #### on [LoveBird](http://lovebird.pacificio.com) 0.9.9 ####
+#### based on [CodeIgniter](http://codeigniter.com) 3.1 #### & #### on [LoveBird](http://lovebird.pacificio.com) 0.9.9 ####
 #### inspired by Gallery 3 ####
 ##### released under the [MIT License](LICENSE), copyright 2016 #####
 
@@ -17,11 +17,11 @@ After that you can customize the site to your needs.  Edit the views that presen
 ### Links ###
 - [gallery4guide](gallery4guide.md)
 - [todo](todo.md)
-- [web site](http://lovebird.pacificio.com)
-- [GitHub](https://github.com/pacificpelican/lovebird)
+- [web site](http://gallery4.pacificio.com)
+- [GitHub](https://github.com/pacificpelican/gallery4)
 
 #### Set up using [Xampp](https://www.apachefriends.org/index.html) or [MAMP](https://www.mamp.info/en/) ####
-> The gallery4.sql file in the root of the directory is the database.  From Xampp you want to get to phpMyAdmin (if Xampp is running its phpMyAdmin install should be available at something like http://localhost:80/phpmyadmin), where you will want to create a new database with the name lovebird4 and then use the import feature to upload the lovebird4.sql file to that new database.  After that it may well work but you have to check that the database user and password in the application/configure/config.php match valid credentials in your Xampp mySQL server--MAMP creates a user root with password root for the whole db server but Xampp may have different defaults so you just need to make sure that the user and password fields match ones with permissions to modify the lovebird4 database.
+> The gallery4.sql file in the root of the directory is the database.  From Xampp you want to get to phpMyAdmin (if Xampp is running its phpMyAdmin install should be available at something like http://localhost:80/phpmyadmin), where you will want to create a new database with the name gallery4 and then use the import feature to upload the gallery4.sql file to that new database.  After that it may well work but you have to check that the database user and password in the application/configure/config.php match valid credentials in your Xampp mySQL server--MAMP creates a user root with password root for the whole db server but Xampp may have different defaults so you just need to make sure that the user and password fields match ones with permissions to modify the gallery44 database.
 So the best way is probably to go on phpMyAdmin and see if there is a root user already, and if not go to User accounts > add user account, and then put root in the user field and password field and then make sure to check 'check all' in the global privileges section before you create.  If a root user exists you could create a new one with a different name but just make sure to change the (dev) db user name in the config.php.
 
 > To make sure your account is an admin account, after you have created it you can go into phpMyAdmin and change the integer [default 1] that corresponds to your user id (as found in the users table) in the users_levels table to 10 or higher.
