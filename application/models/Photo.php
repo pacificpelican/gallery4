@@ -49,7 +49,6 @@ function uploadGalleryImage($value, $eachCount, $eXT, $newGalleryName, $uid, $cu
 
 			if ($this->upload->do_upload('userfiles')) 
 			{
-
             	$data = array('upload_data' => $this->upload->data());
 
             	if (!(isset($g_id)))
@@ -100,8 +99,7 @@ function uploadGalleryImage($value, $eachCount, $eXT, $newGalleryName, $uid, $cu
 				$configURL = "." . $base_url;
 
 				$messageTo = $messageTo . "<br /> FILE UPLOADED TO $super_file_url";
-
-        	} 
+        	}
         	else 
         	{
         		$error = array('error' => $this->upload->display_errors());
