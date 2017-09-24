@@ -144,22 +144,60 @@ div.ACE {
   background-color: #ACE
 }
 </style>
-
+<style>
+	textarea#sharing {
+		width: 90%;
+		height: 120px;
+		border: 3px solid #cccccc;
+		padding: 5px;
+		font-family: Tahoma, sans-serif;
+		background-position: bottom right;
+		background-repeat: no-repeat;
+	}
+	</style>
+	<script>window.twttr = (function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0],
+	    t = window.twttr || {};
+	  if (d.getElementById(id)) return t;
+	  js = d.createElement(s);
+	  js.id = id;
+	  js.src = "https://platform.twitter.com/widgets.js";
+	  fjs.parentNode.insertBefore(js, fjs);
+	 
+	  t._e = [];
+	  t.ready = function(f) {
+	    t._e.push(f);
+	  };
+	 
+	  return t;
+	}(document, "script", "twitter-wjs"));
+	</script>
+	
 <body ng-app>
 	<div class="container">
 		<div class="L-upper-sidebar extra">
-			<main class="content">L upper sidebar</main>
+			<main class="content">
+				<p class="img_caption">
+					<span class="photo_caption"><?= $photo_title ?></a></span>
+				</p>
+			</main>
 		</div>
 		<div id="pcontent" class="midHeader">
 			<main class="content">
-			SITE TITLE
+			<h2><?= SITE_NAME ?></h2>
 			</main>
 		</div>
 		<div class="BED extra">
-			<main class="content"><a href="/gallery">admin</a></main>
+			<main class="content"><a href="/album">admin</a></main>
 		</div>
 		<div class="BEDDED middleRow">
-			<main class="content">L Mid Sidebar</main>
+			<main class="content">
+			<p>
+				<a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=<?= $photo_title ?>" data-size="medium">
+					Share on Twitter
+				</a>
+			</p>
+			</main>
 		</div>
 		<div id="pcontent-below" class="mainPhotoArea extra">
 			<main class="content">
@@ -176,22 +214,54 @@ div.ACE {
 
 		<div id="pcontent-below-2" class="DEFACE extra">
 			<main class="content extra">
-				<p class="img_caption">
-					<span class="photo_caption"><?= $photo_title ?></a></span>
-				</p>
+				<b>share this link:</b>
+				<p>
+		<textarea id="one_link"><? echo SITE_URL . "/image/" . $file_name ?></textarea>
+	</p>
 			</main>
 		</div>
 		<div class="ACCEDE extra">
 			<main class="content">R lower sidebar</main>
 		</div>
-			<div class="DEEDED extra">
-			<main class="content">Footer Sidebar L</main>
+		<div class="DEEDED extra">
+			<main class="content">
+			
+			</main>
 		</div>
 		<div class="FAD" id="lowFooter">
-			<main class="content">via "<a href="http://gallery4.pacificio.com">Gallery 4</a>" photo page <a href="https://codepen.io/pacificpelican/pen/RgvboZ">concept</a> by <a href="http://danmckeown.info">Dan McKeown</a></footer></main>
+			<main class="content">
+				<div id="blog_skyline_area_111a" class="aside col-md-4 medium-3 small-11 columns">
+					<hr />
+					<h7>embed this photo on your site:</h7>
+					<textarea id="sharing"><span class="djmblog_img_wrapper"><a href="<? echo SITE_URL . "/image/" . $file_name ?>"><img class="djmblog_image" id="<?= $photo_title ?>" src="<? echo SITE_URL . GALLERYS_FILE_URL . $file_name ?>" alt="<?= $photo_title ?>" /></span><span class="photo_caption"><?= $photo_title ?></a></span></textarea>
+				</div>
+			</main>
 		</div>
 		<div class="ACE extra">
 			<main class="content">Footer Sidebar R</main>
 		</div>
 	</div>
 
+	
+<div id="blog_skyline_area_111a" class="aside col-md-4 medium-3 small-11 columns">
+	<hr />
+	<h7>share this photo:</h7>
+	<p>
+		<div id="fb-root"></div>
+			<script>(function(d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) return;
+			js = d.createElement(s); js.id = id;
+			js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+			fjs.parentNode.insertBefore(js, fjs);
+			}(document, 'script', 'facebook-jssdk'));
+			</script>
+		<!-- Your share button code -->
+		<div class="fb-share-button" 
+			data-href="<? echo SITE_URL . GALLERYS_FILE_URL . $file_name ?>" 
+			data-layout="button">
+		</div>
+	</p>
+
+	
+</div>
