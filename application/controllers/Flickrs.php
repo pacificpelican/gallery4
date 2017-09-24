@@ -495,8 +495,6 @@ public function image_view($img_name)
 		if ($img_status === '1')
 		{
 			$this->load->view('flickrs_photo_view', $photo_object_var);
-			$this->load->view('flickrs_skyline', $photo_object_var);
-			$this->load->view('blog_post_skyline_view', $photo_object_var);
 			$this->load->view('flickrs_photo_footer', $photo_object_var);
 		}
 		else
