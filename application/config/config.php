@@ -4,12 +4,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 /*
 ------------------
 LoveBird blog/gallery/store/messaging tool settings
-This app was designed by Dan McKeown in Washington state copyright 2016 http://danmckeown.info
+This app was designed by Dan McKeown in Washington state copyright 2016-2017 http://danmckeown.info
 Released under MIT License
 
 /*	Application Info   */
 
-const GALLERY4_VERSION = '0.9.12';               //  gallery4.pacificio.com
+const GALLERY4_VERSION = '0.9.13';               //  gallery4.pacificio.com
 
 const LOVEBIRDS_STORE_VERSION = '0.9.9';		//	lovebird.pacificio.com
 
