@@ -184,3 +184,4 @@ $route['process/gallerys/cart'] = 'gallerys/photos_cart_process';
 $route['photos/package/checkout'] = 'gallerys/photos_signup_checkout';
 $route['process/package/checkout'] = 'gallerys/process_appointment_checkout';
 $route['process/packages/delete/(:num)'] = 'gallerys/process_delete_package/$1';
+$route['photostream'] = 'flickrs/photostream_index';

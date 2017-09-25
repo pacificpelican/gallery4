@@ -555,4 +555,62 @@ public function image_view_json($img_name)
 		}
 }
 
+public function photostream_index()
+{
+	$this->load->helper('user');
+	$uid = get_user_id_via_current_login();
+
+//	if (($uid == FALSE) || ($uid == null))	
+	if (FALSE) 	//	this should not run because login is not required
+	{
+		$intent = array(
+	       		'page' => '/blindfire/files'
+	        );
+		$this->session->set_userdata($intent);
+		$this->session->set_flashdata("info", "login required");
+		$this->load->helper('url');
+		redirect("/account", "refresh");
+	}
+	else
+	{
+		$this->load->database();
+
+		// $q0 = "SELECT * FROM photos WHERE users_id='" . $uid . "' ORDER BY created_at DESC LIMIT 100";
+		// $query0 = $this->db->query($q0);
+
+		$q0 = "SELECT * FROM photos ORDER BY created_at DESC LIMIT 100";
+		$query0 = $this->db->query($q0, array($uid));
+
+		$posts = array();
+		$c = 0;
+		foreach ($query0->result() as $row)
+		{
+			$post_id = $row->id;
+			$post_title = $row->file_name;
+			$created_date =  $row->created_at;
+
+			$the_l_row = array();
+			$the_l_row['post_id'] = $post_id;
+			
+			if ($post_title == "")
+			{
+				$post_title = "posted on " . $created_date;
+			}
+			$the_l_row['post_title'] = $post_title;
+
+			$posts[$c] = $the_l_row;
+			$c++;
+		}
+		$pagedata['title'] = "Your Files";
+		$pagedata['posts'] = $posts;
+
+		$footerdata['footerBrand'] = "<a href='/account'><button class='button btn btn-secondary'>Account</button></a>";
+
+		$this->load->view('site_head_foundation', $pagedata);
+		$this->load->view('header_link_flash_foundation_view', $pagedata);
+		$this->load->view('flickrs_index_view', $pagedata);
+		$this->load->view('site_footer', $footerdata);
+	}
+}
+
 }

@@ -188,7 +188,7 @@ div.ACE {
 			</main>
 		</div>
 		<div class="BED extra">
-			<main class="content"><a href="/album">admin</a></main>
+			<main class="content"><a href="/photostream">photos</a></main>
 		</div>
 		<div class="BEDDED middleRow">
 			<main class="content">
