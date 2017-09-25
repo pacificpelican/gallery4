@@ -44,7 +44,6 @@ public function edit()
 				if ($the_l_row['level'] >= USER_LEVEL_STORE_ADMIN)
 				{
 					$pagedata['loggedinfo'] = $pagedata['loggedinfo'] . " <a href='/gallerys/upload'><button class='btn btn-secondary secondary hollow button' id='uploadClientPhotos'>Upload Photos</button></a>";
-					$pagedata['loggedinfo'] = $pagedata['loggedinfo'] . " <a href='/timeline/edit'><button id='manage_public_timeline_button' class='timeline_manage button secondary btn btn-success'>Public Timeline Admin</button></a> ";
 				}
 		
 				if ($the_l_row['level'] >= USER_LEVEL_BLOG_POSTING)
