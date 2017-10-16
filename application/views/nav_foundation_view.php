@@ -4,12 +4,11 @@
 </div>
 <div class="top-bar" id="big-example-menu">
   <ul class="menu" data-responsive-menu="drilldown medium-dropdown">
-      <li><a class="nav-link" href="/blog">Blog</a></li>
-      <li><a class="nav-link" href="/album">Photos</a></li>
+      <li><a class="nav-link" href="/photostream">Photos</a></li>
+      <li><a class="nav-link" href="/account">Account</a></li>
+      <li><a class="nav-link" href="http://gallery4.pacificio.com">Gallery4</a></li>
       <li><a class="nav-link" href="/files">Files</a></li>
       <li><a class="nav-link" href="/pages/edit">Pages</a></li>
-      
-      <li><a class="nav-link" href="/account">Account</a></li>
       
   </ul>
 </div>

@@ -35,11 +35,16 @@ public function edit()
 
 			$the_l_row = $query0->row_array();
 
+			$pagedata['loggedinfo'] = "";
+			$listText = "<h2 id='list_of_Features'>Features</h2><ul>";
+			$listText = $listText . "<li><a href='/photostream'>Photostream</a></li>";
+
 			if ($the_l_row['level'] >= 1)
 			{
 				if ($the_l_row['level'] >= USER_LEVEL_PHOTO_CLIENT)
 				{
-					$pagedata['loggedinfo'] = "<a href='/album' id='turndark'><button class='button secondary btn btn-primary cart_button' id='random_light_background_button2'>My Photos</button></a> ";
+					$pagedata['loggedinfo'] = $pagedata['loggedinfo'] . "<h2 class='content_heading'>Manage Content</h2>";
+					$pagedata['loggedinfo'] = $pagedata['loggedinfo'] . "<a href='/album' id='turndark'><button class='button secondary btn btn-primary cart_button' id='random_light_background_button2'>My Photos</button></a> ";
 				}
 				if ($the_l_row['level'] >= USER_LEVEL_STORE_ADMIN)
 				{
@@ -52,12 +57,15 @@ public function edit()
 					$pagedata['loggedinfo'] = $pagedata['loggedinfo'] . " <a href='edit/posts'><button class='button btn btn-info'>Edit Posts</button></a>";
 					$pagedata['loggedinfo'] = $pagedata['loggedinfo'] . " <a href='/pages/create'><button class='button btn btn-info'>Create Page</button></a>";
 					$pagedata['loggedinfo'] = $pagedata['loggedinfo'] . " <a href='/pages/edit'><button class='button btn btn-info'>Edit Pages</button></a>";
+					$listText = $listText . "<li><a href='/blog'>Blog</a></li><li><a href='/pages/edit'>Page Builder</a></li>";
 				}
 				if ($the_l_row['level'] >= USER_LEVEL_FILE_UPLOADING)
 				{
+					$listText = $listText . "<li><a href='/files'>File Uploader</a></li>";
 					$pagedata['loggedinfo'] = $pagedata['loggedinfo'] . " <a href='/files'><button id='manage_files_button' class='files_manage button btn btn-secondary secondary button'>Manage Files</button></a>";
 				}
-				
+				$listText = $listText . "</ul>";
+				$pagedata['loggedinfo'] = $pagedata['loggedinfo'] . $listText;
 			}
 			else
 			{

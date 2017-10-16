@@ -64,7 +64,7 @@ define('DROPBOXS_FILE_PATH_VIA_ROOT', '.' . DROPBOXS_FILE_PATH);		//	File upload
 
 define('DEFAULT_NEW_USER_LEVEL', 1);	//	This determines what level new signups start at for privileges listed below
                 //  This access level is set in the database table: users_levels
-define('USER_LEVEL_PHOTO_CLIENT', 1);		//	What minimum user level is required to use /myphotos?
+define('USER_LEVEL_PHOTO_CLIENT', 6);		//	What minimum user level is required to use /myphotos?
 define('USER_LEVEL_STORE', 1);				//	What minimum user level is required to use /store?
 define('USER_LEVEL_GAMES', 1);				//	What minimum user level is required to use /card?
 define('USER_LEVEL_STOCKS_TOOL', 1);		//	What minimum user level is required to use /quote?

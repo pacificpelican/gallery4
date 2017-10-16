@@ -1,8 +1,9 @@
 		<div class="main acct_page_area large-9 medium-10 small-11 columns" id="change_register_section">
 			<?
-			if ($loggedinfo != FALSE)
+		//	var_dump($loggedinfo);
+			if ($loggedinfo != "nil")
 			{
-				echo "<h2 class='content_heading'>Manage Content</h2><p>$loggedinfo</p>";
+				echo "<p>$loggedinfo</p>";
 			//	echo " <a href='edit/posts'><button class='btn btn-info'>Edit Posts</button></a></p>";
 			}
 			?>
