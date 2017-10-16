@@ -56,6 +56,13 @@ console.log(nFile);
   }
 }
 
+@media (min-width: 1400px) 
+{ 
+	div.middleRow {
+		height: 7rem !important;
+	}
+}
+
 div#lowFooter {
   width: 910px;
 }

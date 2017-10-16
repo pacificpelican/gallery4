@@ -459,9 +459,6 @@ public function image_view($img_name)
 	//	look up the image name in the DB
 		$this->load->database();
 
-		// $q0 = "SELECT * FROM photos WHERE file_name='" . $img_name . "' ORDER BY created_at DESC LIMIT 1";
-		// $query0 = $this->db->query($q0);
-
 		$q0 = "SELECT * FROM photos WHERE file_name = ? ORDER BY created_at DESC LIMIT 1";
 		$query0 = $this->db->query($q0, array($img_name));
 
