@@ -29,7 +29,8 @@ function uploadGalleryImage($value, $eachCount, $eXT, $newGalleryName, $uid, $cu
 			if ($eXT !== null)
 			{
 				$new_rand = mt_rand(1, 10000);
-				$double_rand = password_hash($new_rand, PASSWORD_BCRYPT);
+			//	$double_rand = password_hash($new_rand, PASSWORD_BCRYPT);
+				$double_rand = "-";	//	This disables the adding of an arbitrary long hash to the full size image
 				if ($eachCount > 0)
 				{
 					$realCount = $eachCount + 1;
