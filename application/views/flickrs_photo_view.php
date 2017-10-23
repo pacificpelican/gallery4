@@ -18,9 +18,9 @@ console.log(nFile);
 </script>
 <style>
 :root{
-  --main-color: pink;
+  --main-color: #ffffff;
   --secondary-color: white;
-  --header-color: #DEEDED;
+  --header-color: #fff3e0;
   --main-height: 500px;
   
   --main-bg: rgb(255, 255, 255);
@@ -103,23 +103,23 @@ main {
 }
 
 div.DEFACE {
-  background-color: #DEFACE;
+  background-color: #fff8e1;
 }
 
 div.EFFACE {
-  background-color: #EFFACE;
+  background-color: #cccab5
 }
 
 div.DEEDED {
-  background-color: #DEEDED;
+  background-color: #ffffcf;
 }
 
 div.BEDDED {
-  background-color: #EFFACE;
+  background-color: #cccab5
 }
 
 div.DABBED {
-  background-color: #DABBED;
+  background-color: #ffffcf;
 }
 
 footer#name {
@@ -127,7 +127,7 @@ footer#name {
 }
 
 div.FAD {
-  background-color: #FAD
+  background-color: #ffffef;
 }
 
 div.mainPhotoArea {
@@ -136,19 +136,19 @@ div.mainPhotoArea {
 }
 
 div.L-upper-sidebar {
-  background-color: #DAB
+  background-color: #fffde7;
 }
 
 div.ACCEDE {
-  background-color: #ACCEDE
+  background-color: #cccab5;
 }
 
 div.BED {
-  background-color: #BED
+  background-color: #fffde7;
 }
 
 div.ACE {
-  background-color: #ACE
+  background-color: #fffde7;
 }
 </style>
 <style>
@@ -190,9 +190,11 @@ div.ACE {
 	<div class="container">
 		<div class="L-upper-sidebar extra">
 			<main class="content">
-				<p class="img_caption">
-					<span class="photo_caption"><?= $photo_title ?></a></span>
-				</p>
+			<p>
+				<a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=<?= $photo_title ?>" data-size="medium">
+					Share on Twitter
+				</a>
+			</p>
 			</main>
 		</div>
 		<div id="pcontent" class="midHeader">
@@ -205,10 +207,8 @@ div.ACE {
 		</div>
 		<div class="BEDDED middleRow">
 			<main class="content">
-			<p>
-				<a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=<?= $photo_title ?>" data-size="medium">
-					Share on Twitter
-				</a>
+			<p class="img_caption">
+				<span class="photo_caption"><?= $photo_title ?></a></span>
 			</p>
 			</main>
 		</div>
@@ -265,7 +265,7 @@ div.ACE {
 			</main>
 		</div>
 		<div class="ACE extra">
-			<main class="content">Footer Sidebar R</main>
+			<main class="content"></main>
 		</div>
 	</div>
 
