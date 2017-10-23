@@ -4,7 +4,8 @@
 		<footer class="footer col-sm-12 small-12 columns" id="bottom_footer">
 			<br />
 			<p>
-				<button class='btn btn-secondary button'><a href='http://danmckeown.info'>from Dan McKeown</a></button></p>
+			<a href='http://gallery4.pacificio.com'><button class='button btn btn-secondary'>Powered by Gallery4</button></a>
+				</p>
 		</footer>
 	</div>
 

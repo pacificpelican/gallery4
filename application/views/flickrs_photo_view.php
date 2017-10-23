@@ -161,6 +161,12 @@ div.ACE {
 		background-position: bottom right;
 		background-repeat: no-repeat;
 	}
+
+	main#photostream_link a, main#photostream_link a:visited {
+		font-family: Hack, Menlo, monospace;
+		font-size: 11px;
+		font-weight: bold;
+	}
 	</style>
 	<script>window.twttr = (function(d, s, id) {
 	  var js, fjs = d.getElementsByTagName(s)[0],
@@ -195,7 +201,7 @@ div.ACE {
 			</main>
 		</div>
 		<div class="BED extra">
-			<main class="content"><a href="/photostream">photos</a></main>
+			<main id="photostream_link" class="content"><a href="/photostream"><span id="photostreamlink">Photostream</span></a></main>
 		</div>
 		<div class="BEDDED middleRow">
 			<main class="content">
@@ -228,7 +234,21 @@ div.ACE {
 			</main>
 		</div>
 		<div class="ACCEDE extra">
-			<main class="content">R lower sidebar</main>
+		<hr />
+			<div id="fb-root"></div>
+				<script>(function(d, s, id) {
+				var js, fjs = d.getElementsByTagName(s)[0];
+				if (d.getElementById(id)) return;
+				js = d.createElement(s); js.id = id;
+				js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+				fjs.parentNode.insertBefore(js, fjs);
+				}(document, 'script', 'facebook-jssdk'));
+				</script>
+			<!-- Your share button code -->
+			<div class="fb-share-button" 
+				data-href="<? echo SITE_URL . GALLERYS_FILE_URL . $file_name ?>" 
+				data-layout="button">
+			</div>
 		</div>
 		<div class="DEEDED extra">
 			<main class="content">
@@ -251,24 +271,7 @@ div.ACE {
 
 	
 <div id="blog_skyline_area_111a" class="aside col-md-4 medium-3 small-11 columns">
-	<hr />
-	<h7>share this photo:</h7>
-	<p>
-		<div id="fb-root"></div>
-			<script>(function(d, s, id) {
-			var js, fjs = d.getElementsByTagName(s)[0];
-			if (d.getElementById(id)) return;
-			js = d.createElement(s); js.id = id;
-			js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
-			fjs.parentNode.insertBefore(js, fjs);
-			}(document, 'script', 'facebook-jssdk'));
-			</script>
-		<!-- Your share button code -->
-		<div class="fb-share-button" 
-			data-href="<? echo SITE_URL . GALLERYS_FILE_URL . $file_name ?>" 
-			data-layout="button">
-		</div>
-	</p>
+	
 
 	
 </div>
