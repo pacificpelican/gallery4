@@ -465,8 +465,8 @@ public function image_view($img_name)
 		$the_row = $query0->row_array();
 
 	//	package up the image's name and URL as an object
-		$p_location = $the_row['file_url'];
-		$f_name = $the_row['file_name'];
+		$p_location = $the_row['thumbnail_url'];
+		$f_name = $the_row['thumbnail_name'];
 		$p_title = $the_row['photo_title'];
 		$img_status = $the_row['is_image'];
 
