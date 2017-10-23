@@ -2,17 +2,19 @@
 =====
 #### created by [Dan McKeown](http:/danmckeown.info) ####
 #### based on [CodeIgniter](http://codeigniter.com) 3.1 #### & #### on [LoveBird](http://lovebird.pacificio.com) 0.9.9 ####
-#### inspired by Gallery 3 ####
-##### released under the [MIT License](LICENSE), copyright 2016 #####
+#### inspired by [Gallery](http://gallery.pacificio.com) 3 ####
+##### released under the [MIT License](LICENSE), copyright 2016-2017 #####
 
 Gallery 4 is for showcasing photography on user-powered web sites.
 
 ### Setup ###
-In order to install Gallery4, create a mySQL database and use the <code>gallery4.sql</code> file included in the root of the project folder to set up the schema.  Then copy the code to the root of a web server, after changing the data in <code>/application/config/config.php</code> to reflect the details of your site.
+In order to install Gallery4, create a mySQL database and use the <code>gallery4.sql</code> file included in the root of the project folder to set up the schema.  Then copy the code to the root of a web server, after changing the data in <code>[/application/config/config.php](application/config/config.php)</code> to reflect the details of your site.
 
 When your site is ready, change the constant "DEFAULT_NEW_USER_LEVEL" in your project's <code>/application/config/config.php</code> file to 10 [or desired level], then sign up for your account (and have any other admins sign up) and then once you have done that lower the "DEFAULT_NEW_USER_LEVEL" again, probably to 1.  The levels for access of users can be adjusted in the <code>users_levels</code> table in the database.
 
 After that you can customize the site to your needs.  Edit the views that present the content so it looks the way you want, and modify the controllers for your purposes: visit the [CodeIgniter documentaion](https://www.codeigniter.com/user_guide/) and the [LoveBird homepage](http://lovebird.pacificio.com) to learn more about how to build out your site.
+
+You can change the **watermark** in config.php on the line that starts with `define('WATERMARK_IMAGE_URL'`.  
 
 ### Links ###
 - [gallery4guide](gallery4guide.md)
@@ -28,6 +30,6 @@ So the best way is probably to go on phpMyAdmin and see if there is a root user 
 
 > The Gallery4 app runs out of the index.php in the root of the project.  In your server's settings, point the document root to the top level folder of the project.
 
-The LoveBird project was originally developed for [Jessica McKeown](http://jessica.sf3am.com) Photography.
+Gallery 4 is a fork of [Lovebird](http://lovebird.pacificio.com).  The LoveBird project was originally developed for [Jessica McKeown](http://jessica.sf3am.com) Photography.
 
 ![Jessica McKeown Photography](https://github.com/pacificpelican/lovebird/blob/master/assets/files/uebnvc-248h13h389-h9823h-r-(H-(-h.jpg "Jessica McKeown Photography")

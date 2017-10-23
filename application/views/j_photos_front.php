@@ -25,6 +25,10 @@ $(function() {
 			<li><a href="/blog"><b>Blog Engine</b>:</a> <a href="/blog">View</a> <span class="divider">|</span> <a href="/blogs/write">Create</a> <span class="divider">|</span> <a href="/edit/posts">Edit</a></li>
 			<li><a href="/files"><b>File Manager</b>:</a> <a href="/files">View</a> <span class="divider">|</span> <a href="/files/upload">Upload</a> <span class="divider">|</span> <a href="/files">Manage</a></li>
 	    </ol>
+
+		<h3>Watermark</h3>
+		<p>The watermark for image uploads is set in the config.php file.  This is the current one:</p>
+		<p><a href="<?= WATERMARK_IMAGE_URL ?>"><img alt="watermark" src="<?= WATERMARK_IMAGE_URL ?>" /></a></p>
 		
 	</main><!-- End primary page content -->
 
