@@ -6,9 +6,9 @@
   <ul class="menu" data-responsive-menu="drilldown medium-dropdown">
       <li><a class="nav-link" href="/photostream">Photos</a></li>
       <li><a class="nav-link" href="/account">Account</a></li>
-      <li><a class="nav-link" href="http://gallery4.pacificio.com">Gallery4</a></li>
+      <li><a class="nav-link" href="/gallery4">Gallery4</a></li>
       <li><a class="nav-link" href="/files">Files</a></li>
-      <li><a class="nav-link" href="/pages/edit">Pages</a></li>
+      <li><a class="nav-link" href="http://danmckeown.info">Dan McKeown</a></li>
       
   </ul>
 </div>

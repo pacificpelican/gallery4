@@ -164,16 +164,16 @@ function uploadPreviewImage($value, $eachCount, $eXT, $newGalleryName, $uid, $cu
 
         	$the_thumbnail_name = $value['name'];
 
-			$config['source_image'] = $configURL;
-			$config['maintain_ratio'] = TRUE;
-			$config['width'] = 600;
-			$config['height']= 400;
-			$this->load->library('image_lib');
-			$this->image_lib->initialize($config);
-			$this->image_lib->resize();
+			// $config['source_image'] = $configURL;
+			// $config['maintain_ratio'] = TRUE;
+			// // $config['width'] = 600;	//	These images should be full-size, w/watermark, w/this disabled
+			// // $config['height']= 400;
+			// $this->load->library('image_lib');
+			// $this->image_lib->initialize($config);
+			// $this->image_lib->resize();
 
-			$resizeErrors = $this->image_lib->display_errors();
-			$messageTo = $messageTo . " <span>$resizeErrors</span>";
+			// $resizeErrors = $this->image_lib->display_errors();
+			// $messageTo = $messageTo . " <span>$resizeErrors</span>";
 
 			if (file_exists(WATERMARK_IMAGE_URL))
 			{	//   This is for the watermarking
@@ -192,7 +192,7 @@ function uploadPreviewImage($value, $eachCount, $eXT, $newGalleryName, $uid, $cu
 				$waterErrors = $this->image_lib->display_errors();
 				$messageTo = $messageTo . " <span>$waterErrors</span>";
 
-				$messageTo = $messageTo . "<br /> Thumbnail UPLOADED: $the_thumbnail_name";
+				$messageTo = $messageTo . "<br /> Watermarked version UPLOADED: $the_thumbnail_name";
 			}
     	} 
     	else 
