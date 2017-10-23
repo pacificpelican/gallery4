@@ -836,9 +836,7 @@ class XML_RPC_Response
 		{
 			// error
 			$this->errno = $code;
-			$this->errstr = htmlspecialchars($fstr,
-							(is_php('5.4') ? ENT_XML1 | ENT_NOQUOTES : ENT_NOQUOTES),
-							'UTF-8');
+			$this->errstr = htmlspecialchars($fstr, ENT_XML1 | ENT_NOQUOTES, 'UTF-8');
 		}
 		elseif ( ! is_object($val))
 		{
@@ -1886,7 +1884,7 @@ class XML_RPC_Values extends CI_Xmlrpc
 	public function serializeval($o)
 	{
 		$array = $o->me;
-		list($value, $type) = array(reset($ar), key($array));
+		list($value, $type) = array(reset($array), key($array));
 		return "<value>\n".$this->serializedata($type, $value)."</value>\n";
 	}
 

@@ -286,6 +286,9 @@ function makeStringURL_safe_ish($gallery_name)
 	$newGalleryName = str_replace("&", "-", $newGalleryName);
 	$newGalleryName = str_replace("*", "-", $newGalleryName);
 	$newGalleryName = str_replace("%", "-", $newGalleryName);
+	$newGalleryName = str_replace("(", "-", $newGalleryName);
+	$newGalleryName = str_replace(")", "-", $newGalleryName);
+	$newGalleryName = str_replace("^", "-", $newGalleryName);
 
 	return $newGalleryName;
 }

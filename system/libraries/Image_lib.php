@@ -972,7 +972,7 @@ class CI_Image_lib {
 			$cmd_inner = 'pnmscale -xysize '.$this->width.' '.$this->height;
 		}
 
-		$cmd = $this->library_path.$cmd_in.' '.$this->full_src_path.' | '.$cmd_inner.' | '.$cmd_out.' > '.$this->dest_folder.'netpbm.tmp';
+		$cmd = $this->library_path.$cmd_in.' '.escapeshellarg($this->full_src_path).' | '.$cmd_inner.' | '.$cmd_out.' > '.$this->dest_folder.'netpbm.tmp';
 
 		$retval = 1;
 		// exec() might be disabled
@@ -1204,7 +1204,7 @@ class CI_Image_lib {
 		}
 
 		// Build the finalized image
-		if ($wm_img_type === 3 && function_exists('imagealphablending'))
+		if ($wm_img_type === 3)
 		{
 			@imagealphablending($src_img, TRUE);
 		}

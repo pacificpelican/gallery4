@@ -9,11 +9,11 @@ Released under MIT License
 
 /*	Application Info   */
 
-const GALLERY4_VERSION = '0.9.13';               //  gallery4.pacificio.com
+const GALLERY4_VERSION = '0.9.14';               //  gallery4.pacificio.com
 
 const LOVEBIRDS_STORE_VERSION = '0.9.9';		//	lovebird.pacificio.com
 
-const CODEIGNITER_SYSTEM_VERSION = '3.1.4';		//	codeigniter.com
+const CODEIGNITER_SYSTEM_VERSION = '3.1.6';		//	codeigniter.com
 
 /*
 ------------------

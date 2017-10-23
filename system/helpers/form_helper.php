@@ -273,11 +273,10 @@ if ( ! function_exists('form_upload'))
 	 * Identical to the input function but adds the "file" type
 	 *
 	 * @param	mixed
-	 * @param	string
 	 * @param	mixed
 	 * @return	string
 	 */
-	function form_upload($data = '', $value = '', $extra = '')
+	function form_upload($data = '', $extra = '')
 	{
 		$defaults = array('type' => 'file', 'name' => '');
 		is_array($data) OR $data = array('name' => $data);
@@ -597,7 +596,7 @@ if ( ! function_exists('form_label'))
 	 *
 	 * @param	string	The text to appear onscreen
 	 * @param	string	The id the label applies to
-	 * @param	array	Additional attributes
+	 * @param	mixed	Additional attributes
 	 * @return	string
 	 */
 	function form_label($label_text = '', $id = '', $attributes = array())
@@ -610,13 +609,7 @@ if ( ! function_exists('form_label'))
 			$label .= ' for="'.$id.'"';
 		}
 
-		if (is_array($attributes) && count($attributes) > 0)
-		{
-			foreach ($attributes as $key => $val)
-			{
-				$label .= ' '.$key.'="'.$val.'"';
-			}
-		}
+		$label .= _attributes_to_string($attributes);
 
 		return $label.'>'.$label_text.'</label>';
 	}
@@ -677,25 +670,6 @@ if ( ! function_exists('form_close'))
 	function form_close($extra = '')
 	{
 		return '</form>'.$extra;
-	}
-}
-
-// ------------------------------------------------------------------------
-
-if ( ! function_exists('form_prep'))
-{
-	/**
-	 * Form Prep
-	 *
-	 * Formats text so that it can be safely placed in a form field in the event it has HTML tags.
-	 *
-	 * @deprecated	3.0.0	An alias for html_escape()
-	 * @param	string|string[]	$str		Value to escape
-	 * @return	string|string[]	Escaped values
-	 */
-	function form_prep($str)
-	{
-		return html_escape($str, TRUE);
 	}
 }
 

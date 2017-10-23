@@ -1259,9 +1259,7 @@ class CI_Upload {
 		 */
 		if (DIRECTORY_SEPARATOR !== '\\')
 		{
-			$cmd = function_exists('escapeshellarg')
-				? 'file --brief --mime '.escapeshellarg($file['tmp_name']).' 2>&1'
-				: 'file --brief --mime '.$file['tmp_name'].' 2>&1';
+			$cmd = 'file --brief --mime '.escapeshellarg($file['tmp_name']).' 2>&1';
 
 			if (function_usable('exec'))
 			{
@@ -1278,7 +1276,7 @@ class CI_Upload {
 				}
 			}
 
-			if ( ! ini_get('safe_mode') && function_usable('shell_exec'))
+			if (function_usable('shell_exec'))
 			{
 				$mime = @shell_exec($cmd);
 				if (strlen($mime) > 0)
@@ -1312,7 +1310,7 @@ class CI_Upload {
 			}
 		}
 
-		// Fall back to the deprecated mime_content_type(), if available (still better than $_FILES[$field]['type'])
+		// Fall back to mime_content_type(), if available (still better than $_FILES[$field]['type'])
 		if (function_exists('mime_content_type'))
 		{
 			$this->file_type = @mime_content_type($file['tmp_name']);
