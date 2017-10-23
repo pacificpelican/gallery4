@@ -4,9 +4,9 @@
 			<p>
 				<? 	
 				$posts_latest_first = $posts;
-				?><table class="table hover stack"><thead><tr><td>file name</td><td>photo page</td><td>action</td></thead><tbody><?
+				?><table class="table hover stack"><thead><tr><td>raw file name</td><td>photo page</td><td>action</td></thead><tbody><?
 					foreach ($posts_latest_first as $key => $value) {
-						echo "<tr class='blog_posts_list'><td class='file_link'><a href='" . DROPBOXS_FILE_PATH_VIA_ROOT . $value['post_title'] . "'>" . $value['post_title'] . "</a></td><td class='file_link'><a href='". SITE_URL . "/image/" . $value['post_title'] . "'>" . "link" . "</a></td><td class='delete_link'><a href='/flickrs/kill/file/" . $value['post_id'] . "'><button type='button' class='alert button'><span class='delete_it'>delete</span></button></td></tr>";
+						echo "<tr class='blog_posts_list'><td class='file_link'><a href='" . DROPBOXS_FILE_PATH_VIA_ROOT . $value['post_title'] . "'>" . $value['post_title'] . "</a></td><td class='file_link'><a href='". SITE_URL . "/image/" . $value['thumbnail_title'] . "'>" . "link" . "</a></td><td class='delete_link'><a href='/flickrs/kill/file/" . $value['post_id'] . "'><button type='button' class='alert button'><span class='delete_it'>delete</span></button></td></tr>";
 					} ?>
 				</table>
 			</p>

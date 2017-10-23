@@ -50,7 +50,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 //	$route['default_controller'] = 'users/front_look';
-$route['default_controller'] = 'gallerys/photos_front';
+$route['default_controller'] = 'flickrs/photostream_index';
 $route['status'] = 'welcome/status';
 $route['translate_uri_dashes'] = FALSE;
 $route['login'] = 'users/login_look';
@@ -160,3 +160,4 @@ $route['process/package/checkout'] = 'gallerys/process_appointment_checkout';
 $route['process/packages/delete/(:num)'] = 'gallerys/process_delete_package/$1';
 $route['photostream'] = 'flickrs/photostream_index';
 $route['gallery4'] = 'gallerys/photos_front';
+$route['admin'] = 'accounts/edit';

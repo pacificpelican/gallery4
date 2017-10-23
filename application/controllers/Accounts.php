@@ -43,6 +43,7 @@ public function edit()
 			{
 				if ($the_l_row['level'] >= USER_LEVEL_PHOTO_CLIENT)
 				{
+					$pagedata['loggedinfo'] = $pagedata['loggedinfo'] . "<h3 class='g4_info_link'><a href='/gallery4'>Gallery 4 info</a></h2>";
 					$pagedata['loggedinfo'] = $pagedata['loggedinfo'] . "<h2 class='content_heading'>Manage Content</h2>";
 					$pagedata['loggedinfo'] = $pagedata['loggedinfo'] . "<a href='/album' id='turndark'><button class='button secondary btn btn-primary cart_button' id='random_light_background_button2'>My Photos</button></a> ";
 				}

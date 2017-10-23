@@ -1,4 +1,21 @@
-		<div class="main col-md-9 col-sm-12 column large-11 small-12" id="user_files_list">
+		<style>
+      h1, h1 a, h1 a:visited {
+        font-family: Helvetica, "Segoe UI", Ubuntu, Roboto, sans-serif;
+        color: black;
+        font-size: 18px;
+      }
+      h2 {
+        font-family: Hack, "Fira Code", Menlo, monospace;
+        color: darkblue;
+        font-size: 14px;
+      }
+      span a, span a:visited {
+        font-family: Hack, "Fira Code", Menlo, monospace;
+        color: darkred;
+        font-size: 14px;
+      }
+      </style>
+    <div class="main col-md-9 col-sm-12 column large-11 small-12" id="user_files_list">
 			<h2><?= $title ?></h2>
 			<div class="contactSheetContainer">
 				<?	
@@ -17,5 +34,7 @@
           ?>
 				</table>
       </div>
-			
+			<footer id="account_footer">
+          <span id="acf"><a href="/account">Account</a></span>
+      </footer>
 		</div>

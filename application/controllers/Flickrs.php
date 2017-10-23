@@ -389,7 +389,8 @@ public function files_index()
 				$post_title = "posted on " . $created_date;
 			}
 			$the_l_row['post_title'] = $post_title;
-
+			$the_l_row['thumbnail_title'] = $row->thumbnail_name;
+			
 			$posts[$c] = $the_l_row;
 			$c++;
 		}
@@ -459,7 +460,7 @@ public function image_view($img_name)
 	//	look up the image name in the DB
 		$this->load->database();
 
-		$q0 = "SELECT * FROM photos WHERE file_name = ? ORDER BY created_at DESC LIMIT 1";
+		$q0 = "SELECT * FROM photos WHERE thumbnail_name = ? ORDER BY created_at DESC LIMIT 1";
 		$query0 = $this->db->query($q0, array($img_name));
 
 		$the_row = $query0->row_array();
@@ -583,7 +584,7 @@ public function photostream_index()
 		foreach ($query0->result() as $row)
 		{
 			$post_id = $row->id;
-			$post_title = $row->file_name;
+			$post_title = $row->thumbnail_name;
 			$created_date =  $row->created_at;
 
 			$the_l_row = array();
