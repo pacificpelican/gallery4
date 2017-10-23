@@ -76,6 +76,9 @@ function uploadGalleryImage($value, $eachCount, $eXT, $newGalleryName, $uid, $cu
 				$postdata['extension'] = $file_ext;
 				$postdata['file_type'] = $file_ext;
 
+				$rawThumbnailString = str_replace($file_name, "", $file_url);
+				$postdata['thumbnail_url'] = $rawThumbnailString;
+
 				$postdata['thumbnail_name'] = $value['thumbnail_name'];
 
 				$postdata['users_id'] = $uid;

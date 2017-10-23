@@ -432,6 +432,7 @@ public function kill_file($files_id)
 		$the_row = $query0->row_array();
 
 		$killTarget = $the_row['file_url'];
+		$killTargetT = $the_row['thumbnail_url'] . $the_row['thumbnail_name'];
 
 		if (((isset($the_row)) && ($the_row['users_id'] == $uid)) && ($killTarget != null))
 			{
@@ -439,8 +440,9 @@ public function kill_file($files_id)
 				$this->db->where('id', $files_id);
 				$this->db->delete('photos');
 
-				//	delete actual file
+				//	delete actual files
 				unlink($killTarget);
+				unlink($killTargetT);
 
 				$this->session->set_flashdata('info', 'photo file deleted');
 				$this->load->helper('url');

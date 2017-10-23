@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jun 25, 2017 at 11:23 PM
+-- Generation Time: Oct 23, 2017 at 07:45 AM
 -- Server version: 5.6.35
 -- PHP Version: 7.0.15
 
@@ -60,7 +60,24 @@ INSERT INTO `gallerys` (`id`, `name`, `description`, `galleryscol`, `created_at`
 (8, NULL, NULL, NULL, '2017-06-25 23:08:26', '2017-06-25 23:08:26', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'cl'),
 (9, NULL, NULL, NULL, '2017-06-25 23:09:20', '2017-06-25 23:09:20', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'n2'),
 (10, '8', NULL, NULL, '2017-06-25 23:10:10', '2017-06-25 23:10:10', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL),
-(11, 'k this is nenqw9-nc- 90j', NULL, NULL, '2017-06-25 23:12:40', '2017-06-25 23:12:40', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL);
+(11, 'k this is nenqw9-nc- 90j', NULL, NULL, '2017-06-25 23:12:40', '2017-06-25 23:12:40', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL),
+(12, 'nu test 8h qehv', NULL, NULL, '2017-06-26 01:46:08', '2017-06-26 01:46:08', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL),
+(13, 'nu gallery', NULL, NULL, '2017-06-26 08:35:25', '2017-06-26 08:35:25', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL),
+(14, 'new form 0 e8q0n', NULL, NULL, '2017-06-26 08:40:58', '2017-06-26 08:40:58', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL),
+(15, 'mu uh', NULL, NULL, '2017-06-26 09:05:19', '2017-06-26 09:05:19', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL),
+(16, 'pelican', NULL, NULL, '2017-08-06 22:30:39', '2017-08-06 22:30:39', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL),
+(17, 'Jessica', NULL, NULL, '2017-09-25 07:17:42', '2017-09-25 07:17:42', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL),
+(18, 'mountain scene via Unsplash', NULL, NULL, '2017-09-25 19:14:36', '2017-09-25 19:14:36', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL),
+(19, 'bongaroo', NULL, NULL, '2017-10-16 07:45:37', '2017-10-16 07:45:37', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL),
+(20, 'sample photos', NULL, NULL, '2017-10-23 05:24:05', '2017-10-23 05:24:05', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL),
+(21, 'new gallery', NULL, NULL, '2017-10-23 05:38:25', '2017-10-23 05:38:25', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL),
+(22, 'newer gallery', NULL, NULL, '2017-10-23 05:40:08', '2017-10-23 05:40:08', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL),
+(23, 'new pics', NULL, NULL, '2017-10-23 05:54:45', '2017-10-23 05:54:45', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL),
+(24, 'new pics', NULL, NULL, '2017-10-23 05:55:47', '2017-10-23 05:55:47', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL),
+(25, 'even newer gallery %@&', NULL, NULL, '2017-10-23 06:00:16', '2017-10-23 06:00:16', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL),
+(26, '2 more photos', NULL, NULL, '2017-10-23 07:38:53', '2017-10-23 07:38:53', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL),
+(27, 'nu stuff', NULL, NULL, '2017-10-23 07:42:16', '2017-10-23 07:42:16', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL),
+(28, 'wrv89h 9fh 9', NULL, NULL, '2017-10-23 07:43:56', '2017-10-23 07:43:56', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL);
 
 -- --------------------------------------------------------
 
@@ -114,7 +131,8 @@ CREATE TABLE `pages` (
 --
 
 INSERT INTO `pages` (`id`, `users_id`, `page`, `meta`, `created_at`, `updated_at`, `title`, `alias`) VALUES
-(1, 1, 'duz it still werk', NULL, '2017-06-25 23:18:33', '2017-06-25 23:18:33', 'werk', 'werk');
+(1, 1, 'duz it still werk', NULL, '2017-06-25 23:18:33', '2017-06-25 23:18:33', 'werk', 'werk'),
+(2, 1, '<span class=\"djmblog_img_wrapper\"><a href=\"http://localhost:8888/image/bongaroo.jpg\"><img class=\"djmblog_image\" id=\"bongaroo\" src=\"http://localhost:8888/assets/files/bongaroo.jpg\" alt=\"bongaroo\"></span><span class=\"photo_caption\">bongaroo</a></span>', NULL, '2017-10-23 06:54:57', '2017-10-23 06:54:57', 'embed test', 'embed-test');
 
 -- --------------------------------------------------------
 
@@ -139,8 +157,8 @@ CREATE TABLE `photos` (
   `extension` varchar(45) DEFAULT NULL,
   `uploaders_id` int(11) DEFAULT NULL,
   `customers_id` int(11) DEFAULT NULL,
-  `thumbnail_name` varchar(45) DEFAULT NULL,
-  `thumbnail_url` varchar(45) DEFAULT NULL
+  `thumbnail_name` varchar(255) DEFAULT NULL,
+  `thumbnail_url` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -163,7 +181,35 @@ INSERT INTO `photos` (`id`, `file_name`, `file_url`, `description`, `created_at`
 (13, 'cl.png', '/Users/dmck/Documents/Projects/gallery4/assets/files/cl.png', NULL, '2017-06-25 23:08:26', '2017-06-25 23:08:26', NULL, NULL, '1', '.png', 1, 8, 'cl', '.png', NULL, NULL, NULL, NULL),
 (14, 'n2.jpg', '/Users/dmck/Documents/Projects/gallery4/assets/files/n2.jpg', NULL, '2017-06-25 23:09:20', '2017-06-25 23:09:20', NULL, NULL, '1', '.jpg', 1, 9, 'n2', '.jpg', NULL, NULL, NULL, NULL),
 (15, '82y10XY7PrFKZZngn7GFczFwrLekSopens6byyQwt98qdJ3oRcJD6Zh6du.png', '/Users/dmck/Documents/Projects/gallery4/assets/files/82y10XY7PrFKZZngn7GFczFwrLekSopens6byyQwt98qdJ3oRcJD6Zh6du.png', NULL, '2017-06-25 23:10:11', '2017-06-25 23:10:11', NULL, NULL, '1', '.png', 1, 0, '8', '.png', NULL, 0, '8.png', NULL),
-(16, 'k-this-is-nenqw9-nc--90j2y10d3QHMxW0lGBiqOEDB3mYHOWeoYcHMKKTriz.TO0jRE24T5LwAat5..png', '/Users/dmck/Documents/Projects/gallery4/assets/files/k-this-is-nenqw9-nc--90j2y10d3QHMxW0lGBiqOEDB3mYHOWeoYcHMKKTriz.TO0jRE24T5LwAat5..png', NULL, '2017-06-25 23:12:40', '2017-06-25 23:12:40', NULL, NULL, '1', '.png', 1, 0, 'k-this-is-nenqw9-nc--90j', '.png', NULL, 0, 'k-this-is-nenqw9-nc--90j.png', NULL);
+(17, 'nu-test-8h-qehv2y10h4dsVimVul4Pp2xZd.o9FebdHhTy1GBVBpGBbeNnnL7fPrlP.F4ly.png', '/Users/dmck/Documents/Projects/gallery4/assets/files/nu-test-8h-qehv2y10h4dsVimVul4Pp2xZd.o9FebdHhTy1GBVBpGBbeNnnL7fPrlP.F4ly.png', NULL, '2017-06-26 01:46:08', '2017-06-26 01:46:08', NULL, NULL, '1', '.png', 1, 0, 'nu-test-8h-qehv', '.png', NULL, 0, 'nu-test-8h-qehv.png', NULL),
+(18, 'nu-test-8h-qehv22y10KKkYGv18cQw2xeniAIN8.OBXX1umFnJRYJkjWjWryNmEevIPXNG2.png', '/Users/dmck/Documents/Projects/gallery4/assets/files/nu-test-8h-qehv22y10KKkYGv18cQw2xeniAIN8.OBXX1umFnJRYJkjWjWryNmEevIPXNG2.png', NULL, '2017-06-26 01:46:09', '2017-06-26 01:46:09', NULL, NULL, '1', '.png', 1, 0, 'nu-test-8h-qehv 2', '.png', NULL, 0, 'nu-test-8h-qehv2.png', NULL),
+(20, 'nu-gallery2y10qrzF9pHw58cWDwTuxTZObYjt.MFtmL5ubt0eiiLUcsXLXN0jbFy.png', '/Users/dmck/Documents/Projects/gallery4/assets/files/nu-gallery2y10qrzF9pHw58cWDwTuxTZObYjt.MFtmL5ubt0eiiLUcsXLXN0jbFy.png', NULL, '2017-06-26 08:35:25', '2017-06-26 08:35:25', NULL, NULL, '1', '.png', 1, 13, 'nu-gallery', '.png', NULL, 0, 'nu-gallery.png', NULL),
+(21, 'nu-gallery22y10b7ToXKsavkUviBlf9Rb4i.aOR6m3FDqiW9ngTkzgsTl9lPSRDbsPu.png', '/Users/dmck/Documents/Projects/gallery4/assets/files/nu-gallery22y10b7ToXKsavkUviBlf9Rb4i.aOR6m3FDqiW9ngTkzgsTl9lPSRDbsPu.png', NULL, '2017-06-26 08:35:26', '2017-06-26 08:35:26', NULL, NULL, '1', '.png', 1, 13, 'nu-gallery 2', '.png', NULL, 0, 'nu-gallery2.png', NULL),
+(22, 'nu-gallery32y10FilTbcgMqbr9logASzGeuglTf1OFT0ePiY4RzIsl0XywFD3qodi.png', '/Users/dmck/Documents/Projects/gallery4/assets/files/nu-gallery32y10FilTbcgMqbr9logASzGeuglTf1OFT0ePiY4RzIsl0XywFD3qodi.png', NULL, '2017-06-26 08:35:26', '2017-06-26 08:35:26', NULL, NULL, '1', '.png', 1, 13, 'nu-gallery 3', '.png', NULL, 0, 'nu-gallery3.png', NULL),
+(24, 'new-form-0-e8q0n22y10SdMgwceHjPBY54pG2rKSOiJ8TOHmikSshK3AsxLxPlHXomJ5wZGi.png', '/Users/dmck/Documents/Projects/gallery4/assets/files/new-form-0-e8q0n22y10SdMgwceHjPBY54pG2rKSOiJ8TOHmikSshK3AsxLxPlHXomJ5wZGi.png', NULL, '2017-06-26 08:40:59', '2017-06-26 08:40:59', NULL, NULL, '1', '.png', 1, 14, 'new-form-0-e8q0n 2', '.png', NULL, 0, 'new-form-0-e8q0n2.png', NULL),
+(25, 'mu-uh2y10gYUWxgZBNOq7.rl6nu6eKeKMgpwdqJGY58.FhEWwqoVPb88DCCaNa.png', '/Users/dmck/Documents/Projects/gallery4/assets/files/mu-uh2y10gYUWxgZBNOq7.rl6nu6eKeKMgpwdqJGY58.FhEWwqoVPb88DCCaNa.png', NULL, '2017-06-26 09:05:19', '2017-06-26 09:05:19', NULL, NULL, '1', '.png', 1, 15, 'mu-uh', '.png', NULL, 0, 'mu-uh.png', NULL),
+(26, 'mu-uh22y10.HwWfpf7EY6L8F5o84mPH.9OnNuH8lBJTfYqQ4.7yLSD2Bskq1NS.png', '/Users/dmck/Documents/Projects/gallery4/assets/files/mu-uh22y10.HwWfpf7EY6L8F5o84mPH.9OnNuH8lBJTfYqQ4.7yLSD2Bskq1NS.png', NULL, '2017-06-26 09:05:19', '2017-06-26 09:05:19', NULL, NULL, '1', '.png', 1, 15, 'mu-uh 2', '.png', NULL, 0, 'mu-uh2.png', NULL),
+(27, 'mu-uh32y10emdF3Ii3EAaX3dT7nO7hVOfGYCteRQ5Z1hWSazGCpmzCnMXI.Wyrq.png', '/Users/dmck/Documents/Projects/gallery4/assets/files/mu-uh32y10emdF3Ii3EAaX3dT7nO7hVOfGYCteRQ5Z1hWSazGCpmzCnMXI.Wyrq.png', NULL, '2017-06-26 09:05:20', '2017-06-26 09:05:20', NULL, NULL, '1', '.png', 1, 15, 'mu-uh 3', '.png', NULL, 0, 'mu-uh3.png', NULL),
+(28, 'pelican2y10euxaCvjXA0HUBss.SNN8qOVM2CizFHr0S7KGcGDfCvCIVlTdnlpe.jpg', '/Users/dmck/Documents/Projects/gallery4/assets/files/pelican2y10euxaCvjXA0HUBss.SNN8qOVM2CizFHr0S7KGcGDfCvCIVlTdnlpe.jpg', NULL, '2017-08-06 22:30:40', '2017-08-06 22:30:40', NULL, NULL, '1', '.jpg', 1, 16, 'pelican', '.jpg', NULL, 0, 'pelican.jpg', NULL),
+(29, 'Jessica2y10n5OYwlmzcot.fmwBnXjizOGhpnET6dSoV2WQBerUxv30ojRj2AIRO.jpg', '/Users/dmck/Documents/Projects/gallery4/assets/files/Jessica2y10n5OYwlmzcot.fmwBnXjizOGhpnET6dSoV2WQBerUxv30ojRj2AIRO.jpg', NULL, '2017-09-25 07:17:42', '2017-09-25 07:17:42', NULL, NULL, '1', '.jpg', 1, 17, 'Jessica', '.jpg', NULL, 0, 'Jessica.jpg', NULL),
+(30, 'mountain-scene-via-Unsplash2y10Ij9lBu0vD9MrhogReM2tweTNKlC6gC2posXDWAy1BMOCeVqIZvq.jpg', '/Users/dmck/Documents/Projects/gallery4/assets/files/mountain-scene-via-Unsplash2y10Ij9lBu0vD9MrhogReM2tweTNKlC6gC2posXDWAy1BMOCeVqIZvq.jpg', NULL, '2017-09-25 19:14:36', '2017-09-25 19:14:36', NULL, NULL, '1', '.jpg', 1, 18, 'mountain-scene-via-Unsplash', '.jpg', NULL, 0, 'mountain-scene-via-Unsplash.jpg', NULL),
+(31, 'bongaroo2y100RPbGGPbDgOs0utu1Ga2EOtgrj47ltXTiGt5SnUVsgeQc6HeDNZq.jpg', '/Users/dmck/Documents/Projects/gallery4/assets/files/bongaroo2y100RPbGGPbDgOs0utu1Ga2EOtgrj47ltXTiGt5SnUVsgeQc6HeDNZq.jpg', NULL, '2017-10-16 07:45:38', '2017-10-16 07:45:38', NULL, NULL, '1', '.jpg', 1, 19, 'bongaroo', '.jpg', NULL, 0, 'bongaroo.jpg', NULL),
+(32, 'sample-photos2y1001Jgcm31YPxTzOEY5yuETutJ7YxaPJa0EWhBvZFzbBZH3.oe3sFi.jpg', '/Users/dmck/Documents/Projects/gallery4/assets/files/sample-photos2y1001Jgcm31YPxTzOEY5yuETutJ7YxaPJa0EWhBvZFzbBZH3.oe3sFi.jpg', NULL, '2017-10-23 05:24:06', '2017-10-23 05:24:06', NULL, NULL, '1', '.jpg', 1, 20, 'sample-photos', '.jpg', NULL, 0, 'sample-photos.jpg', NULL),
+(33, 'sample-photos22y10WQK4k5XAIyXqrJDCvlvZyuXXqAlWsthxLM8v55ThUHDRrKXaZj5K.jpg', '/Users/dmck/Documents/Projects/gallery4/assets/files/sample-photos22y10WQK4k5XAIyXqrJDCvlvZyuXXqAlWsthxLM8v55ThUHDRrKXaZj5K.jpg', NULL, '2017-10-23 05:24:06', '2017-10-23 05:24:06', NULL, NULL, '1', '.jpg', 1, 20, 'sample-photos 2', '.jpg', NULL, 0, 'sample-photos2.jpg', NULL),
+(34, 'new-gallery.png', '/Users/dmck/Documents/Projects/gallery4/assets/files/new-gallery.png', NULL, '2017-10-23 05:38:25', '2017-10-23 05:38:25', NULL, NULL, '1', '.png', 1, 21, 'new-gallery', '.png', NULL, 0, 'new-gallery.png', NULL),
+(35, 'new-gallery2.png', '/Users/dmck/Documents/Projects/gallery4/assets/files/new-gallery2.png', NULL, '2017-10-23 05:38:25', '2017-10-23 05:38:25', NULL, NULL, '1', '.png', 1, 21, 'new-gallery 2', '.png', NULL, 0, 'new-gallery2.png', NULL),
+(36, 'newer-gallery-.png', '/Users/dmck/Documents/Projects/gallery4/assets/files/newer-gallery-.png', NULL, '2017-10-23 05:40:08', '2017-10-23 05:40:08', NULL, NULL, '1', '.png', 1, 22, 'newer-gallery', '.png', NULL, 0, 'newer-gallery.png', NULL),
+(37, 'newer-gallery2-.png', '/Users/dmck/Documents/Projects/gallery4/assets/files/newer-gallery2-.png', NULL, '2017-10-23 05:40:08', '2017-10-23 05:40:08', NULL, NULL, '1', '.png', 1, 22, 'newer-gallery 2', '.png', NULL, 0, 'newer-gallery2.png', NULL),
+(38, 'new-pics-.png', '/Users/dmck/Documents/Projects/gallery4/assets/files/new-pics-.png', NULL, '2017-10-23 05:54:45', '2017-10-23 05:54:45', NULL, NULL, '1', '.png', 1, 23, 'new-pics', '.png', NULL, 0, 'new-pics.png', NULL),
+(39, 'new-pics2-.png', '/Users/dmck/Documents/Projects/gallery4/assets/files/new-pics2-.png', NULL, '2017-10-23 05:54:45', '2017-10-23 05:54:45', NULL, NULL, '1', '.png', 1, 23, 'new-pics 2', '.png', NULL, 0, 'new-pics2.png', NULL),
+(42, 'even-newer-gallery-----.png', '/Users/dmck/Documents/Projects/gallery4/assets/files/even-newer-gallery-----.png', NULL, '2017-10-23 06:00:16', '2017-10-23 06:00:16', NULL, NULL, '1', '.png', 1, 25, 'even-newer-gallery----', '.png', NULL, 0, 'even-newer-gallery----.png', NULL),
+(43, 'even-newer-gallery----2-.png', '/Users/dmck/Documents/Projects/gallery4/assets/files/even-newer-gallery----2-.png', NULL, '2017-10-23 06:00:16', '2017-10-23 06:00:16', NULL, NULL, '1', '.png', 1, 25, 'even-newer-gallery---- 2', '.png', NULL, 0, 'even-newer-gallery----2.png', NULL),
+(45, '2-more-photos-.png', '/Users/dmck/Documents/Projects/gallery4/assets/files/2-more-photos-.png', NULL, '2017-10-23 07:38:53', '2017-10-23 07:38:53', NULL, NULL, '1', '.png', 1, 26, '2-more-photos', '.png', NULL, 0, '2-more-photos.png', '/Users/dmck/Documents/Projects/gallery4/asset'),
+(46, '2-more-photos2-.png', '/Users/dmck/Documents/Projects/gallery4/assets/files/2-more-photos2-.png', NULL, '2017-10-23 07:38:53', '2017-10-23 07:38:53', NULL, NULL, '1', '.png', 1, 26, '2-more-photos 2', '.png', NULL, 0, '2-more-photos2.png', '/Users/dmck/Documents/Projects/gallery4/asset'),
+(47, 'nu-stuff-.png', '/Users/dmck/Documents/Projects/gallery4/assets/files/nu-stuff-.png', NULL, '2017-10-23 07:42:16', '2017-10-23 07:42:16', NULL, NULL, '1', '.png', 1, 27, 'nu-stuff', '.png', NULL, 0, 'nu-stuff.png', '/Users/dmck/Documents/Projects/gallery4/asset'),
+(48, 'nu-stuff2-.png', '/Users/dmck/Documents/Projects/gallery4/assets/files/nu-stuff2-.png', NULL, '2017-10-23 07:42:16', '2017-10-23 07:42:16', NULL, NULL, '1', '.png', 1, 27, 'nu-stuff 2', '.png', NULL, 0, 'nu-stuff2.png', '/Users/dmck/Documents/Projects/gallery4/asset'),
+(49, 'wrv89h-9fh-9-.png', '/Users/dmck/Documents/Projects/gallery4/assets/files/wrv89h-9fh-9-.png', NULL, '2017-10-23 07:43:56', '2017-10-23 07:43:56', NULL, NULL, '1', '.png', 1, 28, 'wrv89h-9fh-9', '.png', NULL, 0, 'wrv89h-9fh-9.png', '/Users/dmck/Documents/Projects/gallery4/assets/files/'),
+(50, 'wrv89h-9fh-92-.png', '/Users/dmck/Documents/Projects/gallery4/assets/files/wrv89h-9fh-92-.png', NULL, '2017-10-23 07:43:56', '2017-10-23 07:43:56', NULL, NULL, '1', '.png', 1, 28, 'wrv89h-9fh-9 2', '.png', NULL, 0, 'wrv89h-9fh-92.png', '/Users/dmck/Documents/Projects/gallery4/assets/files/');
 
 -- --------------------------------------------------------
 
@@ -189,7 +235,7 @@ CREATE TABLE `posts` (
 
 INSERT INTO `posts` (`id`, `title`, `post`, `created_at`, `updated_at`, `created_at_epoch`, `notes`, `updated_at_epoch`, `podcast_url`) VALUES
 (1, 'trivial', 'non-super-small length post to pass validations', '2017-05-30 04:30:26', '2017-05-30 04:30:26', 1496079026, NULL, 1496079026, ''),
-(2, 'can u still blog?', 'k? is this enough characters?', '2017-06-25 23:21:48', '2017-06-25 23:21:48', 1498393308, NULL, 1498393308, '');
+(2, 'can u still blog?', 'k? is this enough characters? gy', '2017-06-25 23:21:48', '2017-06-25 23:25:35', 1498393308, NULL, 1498393535, '');
 
 -- --------------------------------------------------------
 
@@ -266,7 +312,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `login`, `email`, `password`, `created_at`, `updated_at`, `name`, `URL`, `bio`, `facebook`, `twitter`, `instagram`, `api_key`, `created_at_epoch`, `updated_at_epoch`) VALUES
-(1, 'danmck', 'd@danmckeown.info', '2558a34d4d20964ca1d272ab26ccce9511d880579593cd4c9e01ab91ed00f325', '2016-12-29 07:50:36', '2017-06-25 23:14:35', 'd', '', NULL, NULL, NULL, NULL, '3b91bd74d63298f3d0845267de891e25', 1482961836, 1498392875);
+(1, 'danmck', 'd@danmckeown.info', '2558a34d4d20964ca1d272ab26ccce9511d880579593cd4c9e01ab91ed00f325', '2016-12-29 07:50:36', '2017-06-25 23:14:35', 'd', '', NULL, NULL, NULL, NULL, '3b91bd74d63298f3d0845267de891e25', 1482961836, 1498392875),
+(2, 'danmckeown', 'd@danmckeown.info', '8bb0cf6eb9b17d0f7d22b456f121257dc1254e1f01665370476383ea776df414', '2017-10-16 07:30:25', '2017-10-16 07:30:25', NULL, NULL, NULL, NULL, NULL, NULL, '83be18a6e9772cdcf0a6451e9a866ab3', 1508099425, 1508099425);
 
 -- --------------------------------------------------------
 
@@ -312,7 +359,8 @@ CREATE TABLE `users_levels` (
 --
 
 INSERT INTO `users_levels` (`id`, `users_id`, `level`) VALUES
-(1, 1, 10);
+(1, 1, 10),
+(2, 2, 1);
 
 -- --------------------------------------------------------
 
@@ -445,7 +493,7 @@ ALTER TABLE `users_posts`
 -- AUTO_INCREMENT for table `gallerys`
 --
 ALTER TABLE `gallerys`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 --
 -- AUTO_INCREMENT for table `links`
 --
@@ -455,12 +503,12 @@ ALTER TABLE `links`
 -- AUTO_INCREMENT for table `pages`
 --
 ALTER TABLE `pages`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `photos`
 --
 ALTER TABLE `photos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 --
 -- AUTO_INCREMENT for table `posts`
 --
@@ -485,7 +533,7 @@ ALTER TABLE `tags`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `users_files`
 --
@@ -495,7 +543,7 @@ ALTER TABLE `users_files`
 -- AUTO_INCREMENT for table `users_levels`
 --
 ALTER TABLE `users_levels`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `users_links`
 --
