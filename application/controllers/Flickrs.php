@@ -601,11 +601,11 @@ public function photostream_index()
 		$pagedata['title'] = "Your Files";
 		$pagedata['posts'] = $posts;
 
-		$footerdata['footerBrand'] = "<a href='/account'><button class='button btn btn-secondary'>Account</button></a>";
+		$footerdata['footerBrand'] = "<a href='http://gallery4.pacificio.com'><button class='button btn btn-secondary'>Powered by Gallery 4</button></a>";
 
-		$this->load->view('site_head_foundation', $pagedata);
+		$this->load->view('site_head_g4', $pagedata);
 		$this->load->view('header_link_flash_foundation_view', $pagedata);
-		$this->load->view('flickrs_index_view', $pagedata);
+		$this->load->view('gallery4_index_view', $pagedata);
 		$this->load->view('site_footer', $footerdata);
 	}
 }
