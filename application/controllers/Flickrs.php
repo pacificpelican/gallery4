@@ -598,7 +598,7 @@ public function photostream_index()
 			$posts[$c] = $the_l_row;
 			$c++;
 		}
-		$pagedata['title'] = "Your Files";
+		$pagedata['title'] = "Photostream";
 		$pagedata['posts'] = $posts;
 
 		$footerdata['footerBrand'] = "<a href='http://gallery4.pacificio.com'><button class='button btn btn-secondary'>Powered by Gallery 4</button></a>";
