@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Oct 23, 2017 at 08:23 AM
+-- Generation Time: Oct 23, 2017 at 05:47 PM
 -- Server version: 5.6.35
 -- PHP Version: 7.0.15
 
@@ -44,6 +44,13 @@ CREATE TABLE `gallerys` (
   `customers_id` int(11) DEFAULT NULL,
   `title` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `gallerys`
+--
+
+INSERT INTO `gallerys` (`id`, `name`, `description`, `galleryscol`, `created_at`, `updated_at`, `users_id`, `meta`, `type`, `is_image`, `file_url`, `file_name`, `extension`, `uploaders_id`, `customers_id`, `title`) VALUES
+(32, '^yq3bc9 93hf89 ', NULL, NULL, '2017-10-23 08:25:13', '2017-10-23 08:25:13', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL);
 
 -- --------------------------------------------------------
 
@@ -118,6 +125,14 @@ CREATE TABLE `photos` (
   `thumbnail_name` varchar(255) DEFAULT NULL,
   `thumbnail_url` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `photos`
+--
+
+INSERT INTO `photos` (`id`, `file_name`, `file_url`, `description`, `created_at`, `updated_at`, `title`, `meta`, `is_image`, `file_type`, `users_id`, `gallerys_id`, `photo_title`, `extension`, `uploaders_id`, `customers_id`, `thumbnail_name`, `thumbnail_url`) VALUES
+(60, '-yq3bc9-93hf89-2-.png', '/Users/dmck/Documents/Projects/gallery4/assets/files/-yq3bc9-93hf89-2-.png', NULL, '2017-10-23 08:25:13', '2017-10-23 08:25:13', NULL, NULL, '1', '.png', 1, 32, '-yq3bc9-93hf89- 2', '.png', NULL, 0, '-yq3bc9-93hf89-2.png', '/Users/dmck/Documents/Projects/gallery4/assets/files/'),
+(61, '-yq3bc9-93hf89-3-.png', '/Users/dmck/Documents/Projects/gallery4/assets/files/-yq3bc9-93hf89-3-.png', NULL, '2017-10-23 08:25:13', '2017-10-23 08:25:13', NULL, NULL, '1', '.png', 1, 32, '-yq3bc9-93hf89- 3', '.png', NULL, 0, '-yq3bc9-93hf89-3.png', '/Users/dmck/Documents/Projects/gallery4/assets/files/');
 
 -- --------------------------------------------------------
 
@@ -212,7 +227,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `login`, `email`, `password`, `created_at`, `updated_at`, `name`, `URL`, `bio`, `facebook`, `twitter`, `instagram`, `api_key`, `created_at_epoch`, `updated_at_epoch`) VALUES
-(1, 'danmck', 'd@danmckeown.info', '2558a34d4d20964ca1d272ab26ccce9511d880579593cd4c9e01ab91ed00f325', '2016-12-29 07:50:36', '2017-06-25 23:14:35', 'd', '', NULL, NULL, NULL, NULL, '3b91bd74d63298f3d0845267de891e25', 1482961836, 1498392875);
+(2, 'admin', 'galleryuser@example.com', '9f7be3f6df359877c49c88f1e3593abef97be78f7590ab94ae57613453c56ec5', '2017-10-23 17:45:43', '2017-10-23 17:45:43', NULL, NULL, NULL, NULL, NULL, NULL, 'ed2931db52965efcbafba19fd66cd1e5', 1508741143, 1508741143);
 
 -- --------------------------------------------------------
 
@@ -251,7 +266,7 @@ CREATE TABLE `users_levels` (
 --
 
 INSERT INTO `users_levels` (`id`, `users_id`, `level`) VALUES
-(1, 1, 10);
+(2, 2, 10);
 
 -- --------------------------------------------------------
 
@@ -376,7 +391,7 @@ ALTER TABLE `users_posts`
 -- AUTO_INCREMENT for table `gallerys`
 --
 ALTER TABLE `gallerys`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 --
 -- AUTO_INCREMENT for table `links`
 --
@@ -386,17 +401,17 @@ ALTER TABLE `links`
 -- AUTO_INCREMENT for table `pages`
 --
 ALTER TABLE `pages`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `photos`
 --
 ALTER TABLE `photos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
 --
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `posts_comments`
 --
@@ -421,7 +436,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `users_files`
 --
 ALTER TABLE `users_files`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `users_levels`
 --
@@ -436,7 +451,7 @@ ALTER TABLE `users_links`
 -- AUTO_INCREMENT for table `users_posts`
 --
 ALTER TABLE `users_posts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

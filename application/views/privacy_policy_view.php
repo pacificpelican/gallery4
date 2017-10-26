@@ -9,8 +9,6 @@
 <p><strong>Information Collection And Use</strong></p>
 <p>While using our Service, we may ask you to provide us with certain personally identifiable information that can be used to contact or identify you. Personally identifiable information may include, but is not limited to, your name, email, and other information ("Personal Information").</p>
 <p>Our site or parts of our site may be hosted on third party servers over which the owenrs have no control, and our site will not sanction but cannot promise to prevent disclosure of information to third parties.</p>
-<p><strong>Payment Info</strong></p>
-<p>Making payments on the site is accomplished with Stripe, a 3rd party payemts systems.  User credit card numbers are sent to Stripe and are not stored in the site's database.</p>
 <p><strong>Log Data</strong></p>
 <p>We collect information that your browser sends whenever you visit our Service ("Log Data"). This Log Data may include information such as your computer's Internet Protocol ("IP") address, browser type, browser version, the pages of our Service that you visit, the time and date of your visit, the time spent on those pages and other statistics.</p>
 <p><strong>Cookies</strong></p>
@@ -38,5 +36,5 @@
 <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page.</p>
 <p>You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.</p>
 <p><strong>Contact Us</strong></p>
-<p>If you have any questions about this Privacy Policy, please contact us at privacy@<?= SITE_NAME ?> or through the <?= SITE_NAME ?> web site.</p>
+<p>If you have any questions about this Privacy Policy, please contact us at <?= HELP_EMAIL ?> or through the <?= SITE_NAME ?> web site.</p>
 </main>

@@ -1,8 +1,8 @@
 <?php
 class Flickrs extends CI_Controller
 {
-	//	Flickrs controller for lovebirdsconsulting.com web app by Dan McKeown http://danmckeown.info -->
-	//	copyright 2016  -->
+	//	Flickrs controller for Gallery4 web app by Dan McKeown http://danmckeown.info -->
+	//	copyright 2016-2017 licensed under MIT license  -->
 public function add_file()
 {
 	$this->load->model('user');
@@ -11,13 +11,6 @@ public function add_file()
 	{
 		$login = $this->session->userdata('login');
 		$this->load->database();
-
-		// $q1 = "SELECT * FROM users WHERE login='" . $login . "'";
-		// $query = $this->db->query($q1);
-
-		// $query = $this->db->select('*')->from('users')
-	 //    ->where('login', $login)
-	 //    ->get();
 
 		$query = $this->user->get_users_row_via_login($login);
 
@@ -30,13 +23,6 @@ public function add_file()
 
 		if (isset($uid))
 		{
-			// $q0 = "SELECT * FROM users_levels WHERE users_id='" . $uid . "'";
-			// $query0 = $this->db->query($q0);
-
-			// $query0 = $this->db->select('*')->from('users_levels')
-		 //    ->where('users_id', $uid)
-		 //    ->get();
-
 			$query0 = $this->user->get_users_levels_row_via_id($uid);
 
 			$the_l_row = $query0->row_array();
@@ -90,9 +76,6 @@ public function process_upload()
 		$login = $this->session->userdata('login');
 		$this->load->database();
 
-		// $q1 = "SELECT * FROM users WHERE login='" . $login . "'";
-		// $query = $this->db->query($q1);
-
 		$query = $this->db->select('*')->from('users')
 	    ->where('login', $login)
 	    ->get();
@@ -106,9 +89,6 @@ public function process_upload()
 
 		if (isset($uid))
 		{
-			// $q0 = "SELECT * FROM users_levels WHERE users_id='" . $uid . "'";
-			// $query0 = $this->db->query($q0);
-
 			$query0 = $this->db->select('*')->from('users_levels')
 		    ->where('users_id', $uid)
 		    ->get();
@@ -153,8 +133,6 @@ public function process_upload()
 
 				$gallery_name = $_POST['gallery_name'];
 				$customer = $_POST['users_id'];
-			//	echo "users id: " . $customer;
-			//	die;
 
 				$newPhotoNameRoot = $gallery_name;
 
@@ -188,10 +166,6 @@ public function process_upload()
 				$newGalleryName = str_replace("&", "-", $newGalleryName);
 				$newGalleryName = str_replace("*", "-", $newGalleryName);
 				$newGalleryName = str_replace("%", "-", $newGalleryName);
-
-			//	echo "gallery data: ";
-			//	var_dump($gallerydata);
-			//	die;
 
 				$this->db->insert('gallerys', $gallerydata);
 				$g_id = $this->db->insert_id();
@@ -367,10 +341,7 @@ public function files_index()
 	{
 		$this->load->database();
 
-		// $q0 = "SELECT * FROM photos WHERE users_id='" . $uid . "' ORDER BY created_at DESC LIMIT 100";
-		// $query0 = $this->db->query($q0);
-
-		$q0 = "SELECT * FROM photos WHERE users_id = ? ORDER BY created_at DESC LIMIT 100";
+		$q0 = "SELECT * FROM photos WHERE users_id = ? ORDER BY created_at DESC LIMIT " . PHOTOS_EDIT_LIST_MAX_STRING;
 		$query0 = $this->db->query($q0, array($uid));
 
 		$posts = array();
@@ -408,7 +379,6 @@ public function files_index()
 
 public function kill_file($files_id)
 {
-
 	$this->load->helper('user');
 	$uid = get_user_id_via_current_login();
 
@@ -421,9 +391,6 @@ public function kill_file($files_id)
 	else
 	{
 		$this->load->database();
-
-		// $q0 = "SELECT * FROM photos WHERE id='" . $files_id . "'";
-		// $query0 = $this->db->query($q0);
 
 		$query0 = $this->db->select('*')->from('photos')
 	    ->where('id', $files_id)
@@ -441,8 +408,8 @@ public function kill_file($files_id)
 				$this->db->delete('photos');
 
 				//	delete actual files
-				unlink($killTarget);
-				unlink($killTargetT);
+				unlink($killTarget);	//	This erases the original image
+				unlink($killTargetT);	//	This erases the watermarked image
 
 				$this->session->set_flashdata('info', 'photo file deleted');
 				$this->load->helper('url');
@@ -510,9 +477,6 @@ public function image_view_json($img_name)
 	//	look up the image name in the DB
 		$this->load->database();
 
-		// $q0 = "SELECT * FROM photos WHERE file_name='" . $img_name . "' ORDER BY created_at DESC LIMIT 1";
-		// $query0 = $this->db->query($q0);
-
 		$q0 = "SELECT * FROM photos WHERE file_name = ? ORDER BY created_at DESC LIMIT 1";
 		$query0 = $this->db->query($q0, array($img_name));
 
@@ -559,8 +523,7 @@ public function photostream_index()
 {
 	$this->load->helper('user');
 	$uid = get_user_id_via_current_login();
-
-//	if (($uid == FALSE) || ($uid == null))	
+	
 	if (FALSE) 	//	this should not run because login is not required
 	{
 		$intent = array(
@@ -575,10 +538,7 @@ public function photostream_index()
 	{
 		$this->load->database();
 
-		// $q0 = "SELECT * FROM photos WHERE users_id='" . $uid . "' ORDER BY created_at DESC LIMIT 100";
-		// $query0 = $this->db->query($q0);
-
-		$q0 = "SELECT * FROM photos ORDER BY created_at DESC LIMIT 100";
+		$q0 = "SELECT * FROM photos ORDER BY created_at DESC LIMIT " . PHOTOSTREAM_LIMIT_STRING;
 		$query0 = $this->db->query($q0, array($uid));
 
 		$posts = array();
@@ -598,10 +558,12 @@ public function photostream_index()
 			}
 			$the_l_row['post_title'] = $post_title;
 
+			$the_l_row['img_title'] = $row->photo_title;
+
 			$posts[$c] = $the_l_row;
 			$c++;
 		}
-		$pagedata['title'] = "Photostream";
+		$pagedata['title'] = "Photostream: " . SITE_NAME;
 		$pagedata['posts'] = $posts;
 
 		$footerdata['footerBrand'] = "<a href='http://gallery4.pacificio.com'><button class='button btn btn-secondary'>Powered by Gallery 4</button></a>";

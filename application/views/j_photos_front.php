@@ -9,6 +9,48 @@ $(function() {
 			});
 });
 </script>
+<style>
+	body {
+		background-color: FloralWhite;
+	}
+	svg {
+		background-color: #ffffce;
+		border-radius: 1.2em;
+	}
+	svg rect#the_flash, svg rect#bar {
+	fill: FloralWhite;
+	}
+	svg rect#button2 {
+	fill: darkgray;
+	}
+	svg rect#button1 {
+	fill: darkblue;
+	}
+	svg circle {
+	fill: #e6ee9c;
+	}
+	circle#secondCircle {
+	fill: lightblue;
+	}
+	svg {
+	height: 120px;
+	width: 300px;
+	}
+	circle#firstCircleInner {
+	fill: gray;
+	}
+	circle#secondCircleInner {
+	fill: Cornsilk;
+	}
+
+	p#gallery4linkunderSVG a, p#gallery4linkunderSVG {
+	font-family: Hack, "Fira Code", Menlo, mono, monospace;
+	text-decoration: overline;
+	color: orange;
+	margin-left: 3em;
+	margin-top: 0.2em;
+	}
+</style>
 
 <link rel="stylesheet" href="/assets/css/j_photos_style.css" />
 	
@@ -39,6 +81,22 @@ $(function() {
 			<li><a href="/photostream"><b>Photostream</b></a></li>
 			<li><a href="/account">Account</a></li>
 		</ul>
+
+		<div id="gallery4svglogo">
+			<svg id="vReelLogo">
+				<rect id="bar" x="30" y="4" width="241" height="18"/>
+				<rect id="the_flash" x="20" y="4" width="64" height="70"/>
+				<rect id="button1" x="270" y="0" width="24" height="7"/>
+				<rect id="button2" x="187" y="50" width="20" height="20"/>
+				<circle id="firstCircle" cx="45" cy="32" r="20"/>
+				<circle id="firstCircleInner" cx="140" cy="59" r="40"/>
+				<circle id="secondCircle" cx="49" cy="32" r="20"/>
+				<circle id="secondCircleInner" cx="139" cy="59" r="35"/>
+			</svg>
+			<p id="gallery4linkunderSVG">
+ 				<a href="http://gallery4.pacificio.com" target="_top">Gallery 4</a>
+			</p>
+		</div>
 
 	</aside>
 

@@ -9,7 +9,7 @@ Released under MIT License
 
 /*	Application Info   */
 
-const GALLERY4_VERSION = '0.9.14';               //  gallery4.pacificio.com
+const GALLERY4_VERSION = '0.9.15';               //  gallery4.pacificio.com
 
 const LOVEBIRDS_STORE_VERSION = '0.9.9';		//	lovebird.pacificio.com
 
@@ -21,8 +21,6 @@ const CODEIGNITER_SYSTEM_VERSION = '3.1.6';		//	codeigniter.com
 if ((PHP_OS !== "Darwin") && (PHP_OS !== "Windows") && (PHP_OS !== "WIN32") && (PHP_OS !== "WINNT"))   //  This is for the live deployement
 {	//	Currently assumes user will develop with Mac OS
 define('SITE_URL', '');	//	Must be the site's address on the web--no trailing slash
-define('STRIPE_PRIVATE_API_KEY', '');	//	Site owner's Stripe private API key for production
-define('STRIPE_PUBLIC_API_KEY', '');	//	Site owner's Stripe public API key for production
 define('DJM_DB_HOST', 'localhost');	//	database host name, maybe localhost
 define('DJM_DB_NAME', 'lovebirdsstore');	//	site database name on the DB server
 define('DJM_DB_USER', 'User');	//	site database user name
@@ -32,8 +30,6 @@ define('DJM_ENVIRONMENT', 'production');		//	set as 'development' or 'production
 else    //  This is for the development server
 {	//	Currently assumes user will deploy on Linux [not Mac OS]
 define('SITE_URL', 'http://localhost:8888');	//	Must be the site's address on the local web server--no trailing slash
-define('STRIPE_PRIVATE_API_KEY', 'sk_test_ff2cTSQQUXKvuGBfxd7S6r8H');	//	Site owner's Stripe private API key for testing
-define('STRIPE_PUBLIC_API_KEY', 'pk_test_lYEQDfOu5UOXli8SYn4o27xy');	//	Site owner's Stripe public API key for testing
 define('DJM_DB_HOST', 'localhost');	//	development (local) database host name, maybe localhost
 define('DJM_DB_NAME', 'gallery4');	//	development (local) site database name
 define('DJM_DB_USER', 'root');	//	development (local) site database user name
@@ -42,36 +38,34 @@ define('DJM_ENVIRONMENT', 'development');		//	set as 'development' or 'productio
 }
 
 define('SITE_NAME', 'Photo Gallery');		//	Site name, can be URL w/o https:// or whatever the site is called
-define('OWNER_NAME', 'OPEN SOURCE/FREE SOFTWARE');	//	Owner's name; controlling company name; or the site URL with no .com [or any TLD]
+define('OWNER_NAME', 'PHOTO GALLERY WEB SITE OWNER');	//	Owner's name; controlling company name; or the site URL with no .com [or any TLD]
+define('PHOTOSTREAM_LIMIT_STRING', '100');  //  Determines the maximum number of photos to list at /photostream
+define('PHOTOS_EDIT_LIST_MAX_STRING', '1000'); //   Determines the maximum number of user photos to list at /album
+
+define('HELP_EMAIL', 'help@this_site');   //  The email address that appears at /help
 
 define('FOOTER_TEXT', 'powered by Gallery 4');		//	Words which will appear in footer button
 define('FOOTER_URL', 'http://gallery4.pacificio.com');		//	Where the footer button will link to
 
 define('BLOG_DESCRIPTION', 'A free and open source web gallery software project');		//	Used in RSS feed
 
-$cI_ENC_KEY = '1eb7c9e66f3b56cougsfddb19037366huskies0f02cfc9a196';	//	CodeIgniter key - should be unique
+$cI_ENC_KEY = 'ada9bfde9fee7b60f9710e0e497b9b2487175493969567';	//	CodeIgniter key - should be unique
 
 define('PW_ALGORITHM', 'sha256');	//	The algorithm used to hash passwords ["1 way" hash]
 define('API_ALGORITHM', 'md5');	//	The algorithm used to create user account API keys
 
-define('MINICOiN', '3648313282979469');		//	This should be changed carefully--it is the card 'iv' and is size dependent
-define('SUPERCOiN', '624f2c95341138862105a3e1dfb00f9362c1bf1ea50ba71af137b58e4051edb7');	//	Card encryption key
-define('CARD_METHOD', 'aes-128-cbc');	//	The ecncryption that OpenSSL will use to encrypt user cards stored using /add/card
-
-define('MAX_FILE_UPLOAD_SIZE', 20500); 	//	Used in Dropboxs controller
+define('MAX_FILE_UPLOAD_SIZE', 20500); 	//	Used in Dropboxs controller: what is the largest allowed file upload size?
 define('DROPBOXS_FILE_PATH', './assets/files/');		//	File upload path for Dropboxs controller
 define('DROPBOXS_FILE_PATH_VIA_ROOT', '.' . DROPBOXS_FILE_PATH);		//	File upload path for Dropboxs controller
 
 define('DEFAULT_NEW_USER_LEVEL', 1);	//	This determines what level new signups start at for privileges listed below
                 //  This access level is set in the database table: users_levels
 define('USER_LEVEL_PHOTO_CLIENT', 6);		//	What minimum user level is required to use /myphotos?
-define('USER_LEVEL_STORE', 1);				//	What minimum user level is required to use /store?
-define('USER_LEVEL_GAMES', 1);				//	What minimum user level is required to use /card?
-define('USER_LEVEL_STOCKS_TOOL', 1);		//	What minimum user level is required to use /quote?
-define('USER_LEVEL_MESSAGING', 1);			//	What minimum user level is required to write a message at /messages/create?
+
+define('USER_LEVEL_MESSAGING', 2);			//	What minimum user level is required to write a message at /messages/create?
 define('USER_LEVEL_BLOG_POSTING', 3);		//	What minimum user level is required to write a post at /blogs/write?
 define('USER_LEVEL_FILE_UPLOADING', 6);		//	What minimum user level is required to upload files at /files/upload?
-define('USER_LEVEL_STORE_ADMIN', 10);		//	What minimum user level is required to ADMINISTER THE SITE?
+define('USER_LEVEL_STORE_ADMIN', 10);		//	What minimum user level is required to ADMINISTER THE SITE [store deprecated]?
 
 define('ALLOWED_FILE_UPLOAD_TYPES', '*');		//	What type of files are allowed for file upload tool users?
 
@@ -85,8 +79,6 @@ define('WATERMARK_POSITION_VERTICAL', 'bottom');
 define('WATERMARK_POSITION_HORIZONTAL', 'right');
 define('IMAGE_LIBRARY_PREFERENCE', 'netpbm');	// choose the image processing library: netpbm, imagemagick, gd, gd2
 
-define('STATE_TAX_RATE', 0.096);
-define('STATE_TITLE', 'Washington State');
 define('PHOTOGRAPHER_ID', 0);  // the id of the photographer/admin in the users table in the database [deprecated]
 
 /* --------------------------------------------------------------------------- /*

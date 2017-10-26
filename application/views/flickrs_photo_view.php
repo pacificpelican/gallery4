@@ -12,19 +12,19 @@
 	<meta property="og:image"         content="<? echo SITE_URL . GALLERYS_FILE_URL . $file_name ?>" />
 </head>
 <script>
-nFile = "<?= $photo_object ?>";
-photo = nFile;
-console.log(nFile);
-</script>
-<style>
-:root{
-  --main-color: #ffffff;
-  --secondary-color: white;
-  --header-color: #fff3e0;
-  --main-height: 500px;
-  
-  --main-bg: rgb(255, 255, 255);
-  --logo-border-color: lightgreen;
+	nFile = "<?= $photo_object ?>";
+	photo = nFile;
+	console.log(nFile);
+	</script>
+	<style>
+	:root{
+		--main-color: #ffffff;
+		--secondary-color: white;
+		--header-color: #fff3e0;
+		--main-height: 500px;
+		
+		--main-bg: rgb(255, 255, 255);
+		--logo-border-color: lightgreen;
 }
 
 @media (max-width: 601px) 
@@ -167,24 +167,25 @@ div.ACE {
 		font-size: 11px;
 		font-weight: bold;
 	}
-	</style>
-	<script>window.twttr = (function(d, s, id) {
-	  var js, fjs = d.getElementsByTagName(s)[0],
-	    t = window.twttr || {};
-	  if (d.getElementById(id)) return t;
-	  js = d.createElement(s);
-	  js.id = id;
-	  js.src = "https://platform.twitter.com/widgets.js";
-	  fjs.parentNode.insertBefore(js, fjs);
-	 
-	  t._e = [];
-	  t.ready = function(f) {
-	    t._e.push(f);
-	  };
-	 
-	  return t;
+</style>
+<script>
+	window.twttr = (function(d, s, id) {
+		var js, fjs = d.getElementsByTagName(s)[0],
+		t = window.twttr || {};
+		if (d.getElementById(id)) return t;
+		js = d.createElement(s);
+		js.id = id;
+		js.src = "https://platform.twitter.com/widgets.js";
+		fjs.parentNode.insertBefore(js, fjs);
+		
+		t._e = [];
+			t.ready = function(f) {
+				t._e.push(f);
+			};
+		
+		return t;
 	}(document, "script", "twitter-wjs"));
-	</script>
+</script>
 	
 <body ng-app>
 	<div class="container">
@@ -268,10 +269,7 @@ div.ACE {
 			<main class="content"></main>
 		</div>
 	</div>
-
 	
 <div id="blog_skyline_area_111a" class="aside col-md-4 medium-3 small-11 columns">
-	
 
-	
 </div>
