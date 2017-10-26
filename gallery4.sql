@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.5.2
+-- version 4.6.4
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Oct 23, 2017 at 05:47 PM
--- Server version: 5.6.35
--- PHP Version: 7.0.15
+-- Host: localhost:8889
+-- Generation Time: Oct 26, 2017 at 04:49 PM
+-- Server version: 5.6.33
+-- PHP Version: 7.0.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -125,14 +125,6 @@ CREATE TABLE `photos` (
   `thumbnail_name` varchar(255) DEFAULT NULL,
   `thumbnail_url` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `photos`
---
-
-INSERT INTO `photos` (`id`, `file_name`, `file_url`, `description`, `created_at`, `updated_at`, `title`, `meta`, `is_image`, `file_type`, `users_id`, `gallerys_id`, `photo_title`, `extension`, `uploaders_id`, `customers_id`, `thumbnail_name`, `thumbnail_url`) VALUES
-(60, '-yq3bc9-93hf89-2-.png', '/Users/dmck/Documents/Projects/gallery4/assets/files/-yq3bc9-93hf89-2-.png', NULL, '2017-10-23 08:25:13', '2017-10-23 08:25:13', NULL, NULL, '1', '.png', 1, 32, '-yq3bc9-93hf89- 2', '.png', NULL, 0, '-yq3bc9-93hf89-2.png', '/Users/dmck/Documents/Projects/gallery4/assets/files/'),
-(61, '-yq3bc9-93hf89-3-.png', '/Users/dmck/Documents/Projects/gallery4/assets/files/-yq3bc9-93hf89-3-.png', NULL, '2017-10-23 08:25:13', '2017-10-23 08:25:13', NULL, NULL, '1', '.png', 1, 32, '-yq3bc9-93hf89- 3', '.png', NULL, 0, '-yq3bc9-93hf89-3.png', '/Users/dmck/Documents/Projects/gallery4/assets/files/');
 
 -- --------------------------------------------------------
 
