@@ -10,7 +10,7 @@
 Gallery 4 is for showcasing photography on user-powered web sites.
 
 ### Setup ###
-In order to install Gallery4, create a mySQL database (by default called gallery4) and use the `gallery4.sql` file included in the root of the project folder to set up the schema.  Then copy the code to the root of a web server, after changing the data in `[/application/config/config.php](application/config/config.php)` to reflect the details of your site.
+In order to install Gallery4, create a mySQL database (by default called gallery4) and use the `gallery4.sql` file included in the root of the project folder to set up the schema.  Then copy the code to the root of a web server, after changing the data in <code>[/application/config/config.php](application/config/config.php)</code> to reflect the details of your site.
 
 ***Admin Accounts***
 
