@@ -472,7 +472,7 @@ public function image_view($img_name)
 		}
 }
 
-public function image_view_json($img_name)
+public function image_view_json($img_name)	//	deprecated
 {
 	//	look up the image name in the DB
 		$this->load->database();

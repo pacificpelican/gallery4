@@ -7,6 +7,11 @@ public function edit()
 {	//	This method launches the 'edit account' page for logged-in users with form to change login, email, etc.
 	$this->load->model('user');
 
+	$intent = array(
+		'page' => '/account'
+ 	);
+	$this->session->set_userdata($intent);
+
 	if ($this->user->check_session_login())
 	{
 		$login = $this->session->userdata('login');

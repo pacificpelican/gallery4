@@ -61,6 +61,9 @@
 	div.middleRow {
 		height: 7rem !important;
 	}
+	div#pcontent-below {
+		height: 40rem !important;
+	}
 }
 
 div#lowFooter {
