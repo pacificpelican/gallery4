@@ -12,7 +12,7 @@
 - change SITE_NAME, HELP_EMAIL, OWNER_NAME, SITE_URL and other constants in the Gallery4 [config](application/config/config.php) file
 - change CI encryption key in config file
 - delete .htaccess; unzip [double-click] htaccess.zip (http) or htaccess-ssl.zip (https)
-- make sure site url constant in config is correct [e.g. change from http://localhost:8888 to https://djmblog.com]
+- make sure site url constant in config is correct [e.g. change from http://localhost:8888 to https://example.com]
 - change the database info in the config file to the correct deployment DB info [i.e. the database location, name, and user+password].
 - make sure a directory called /assets/files exists, as it is ignored in Git but needed for user uploads
 - check that nav_foundation_view and nav_bootstrap_view have the right links for your site in them

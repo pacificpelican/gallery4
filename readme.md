@@ -10,7 +10,7 @@
 Gallery 4 is for showcasing photography on user-powered web sites.
 
 ### Setup ###
-In order to install Gallery4, create a mySQL database and use the `gallery4.sql` file included in the root of the project folder to set up the schema.  Then copy the code to the root of a web server, after changing the data in `[/application/config/config.php](application/config/config.php)` to reflect the details of your site.
+In order to install Gallery4, create a mySQL database (by default called gallery4) and use the `gallery4.sql` file included in the root of the project folder to set up the schema.  Then copy the code to the root of a web server, after changing the data in `[/application/config/config.php](application/config/config.php)` to reflect the details of your site.
 
 ***Admin Accounts***
 
@@ -42,5 +42,3 @@ So the best way is probably to go on phpMyAdmin and see if there is a root user 
 > To make sure a user-created adminstrative account [in contrast to the pre-created "admin" account] has the expected privileges, after you have created it you can go into phpMyAdmin and change the integer [default 1] that corresponds to your user id (as found in the users table) in the users_levels table to 10 or higher.
 
 > The Gallery4 app runs out of the [index.php](index.php) in the root of the project.  In your server's settings, point the document root to the top level folder of the project.
-
-Gallery 4 is a fork of [Lovebird](http://lovebird.pacificio.com).  The LoveBird project was originally developed for [Jessica McKeown](http://jessica.sf3am.com) Photography.
