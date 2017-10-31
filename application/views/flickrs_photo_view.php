@@ -138,6 +138,10 @@ div.mainPhotoArea {
   border: 1px solid black;
 }
 
+main.content {
+	overflow: visible !important;
+}
+
 div.L-upper-sidebar {
   background-color: #fffde7;
 }
@@ -152,6 +156,10 @@ div.BED {
 
 div.ACE {
   background-color: #fffde7;
+}
+
+.translucent {
+	opacity: 0.3;
 }
 </style>
 <style>
@@ -221,7 +229,7 @@ div.ACE {
 				<span class="img_wrapper"><a href="<? echo SITE_URL . GALLERYS_FILE_URL . $file_name ?>"><img class="album_image" id="<?= $photo_title ?>" src="<? echo SITE_URL . GALLERYS_FILE_URL . $file_name ?>" alt="<?= $photo_title ?>" /></span>
 			</main>
 		</div>
-		<div class="DABBED middleRow">
+		<div class="DABBED middleRow translucent">
 			<main class="content">	
 				<p class="photo_metadata">
 					<span class="created_date"><small>uploaded: <?= $created ?></a> UTC</small></span>
@@ -229,7 +237,7 @@ div.ACE {
 			</main>
 		</div>
 
-		<div id="pcontent-below-2" class="DEFACE extra">
+		<div id="pcontent-below-2" class="DEFACE extra translucent">
 			<main class="content extra">
 				<b>share this link:</b>
 				<p>
@@ -237,7 +245,7 @@ div.ACE {
 	</p>
 			</main>
 		</div>
-		<div class="ACCEDE extra">
+		<div class="ACCEDE extra translucent">
 		<hr />
 			<div id="fb-root"></div>
 				<script>(function(d, s, id) {

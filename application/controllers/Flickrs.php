@@ -437,7 +437,8 @@ public function image_view($img_name)
 	//	package up the image's name and URL as an object
 		$p_location = $the_row['thumbnail_url'];
 		$f_name = $the_row['thumbnail_name'];
-		$p_title = $the_row['photo_title'];
+		$raw_p_title = $the_row['photo_title'];
+		$p_title = str_replace("-"," ",$raw_p_title);
 		$img_status = $the_row['is_image'];
 
 		$photo_full_url = SITE_URL . GALLERYS_FILE_URL . $f_name;
@@ -556,9 +557,12 @@ public function photostream_index()
 			{
 				$post_title = "posted on " . $created_date;
 			}
+
 			$the_l_row['post_title'] = $post_title;
 
-			$the_l_row['img_title'] = $row->photo_title;
+			$the_l_row_raw = $row->photo_title;
+			$p_title = str_replace("-"," ",$the_l_row_raw);
+			$the_l_row['img_title'] = $p_title;
 
 			$posts[$c] = $the_l_row;
 			$c++;
