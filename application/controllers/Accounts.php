@@ -99,10 +99,19 @@ public function check_acct_change_input()
 {	//	This method processes the post data from form for login, email, name and URL editing
 	$loginOG = $this->session->userdata('login');
 
-	$this->load->library('form_validation');
-	$this->form_validation->set_rules('login', 'Username', 'trim|required|min_length[2]|max_length[32]');
-	$this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
-
+	if (defined('INTL_IDNA_VARIANT_UTS46'))
+	{
+		$this->load->library('form_validation');
+		$this->form_validation->set_rules('login', 'Username', 'trim|required|min_length[2]|max_length[32]');
+		$this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
+	}
+	else
+	{
+		$this->load->library('form_validation');
+		$this->form_validation->set_rules('login', 'Username', 'trim|required');
+		$this->form_validation->set_rules('email', 'Email', 'trim|required');
+	}
+	
 	if ($this->form_validation->run() == FALSE)
 	{
 		$this->session->set_flashdata('info', 'account change data not valid');

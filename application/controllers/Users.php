@@ -66,11 +66,24 @@ public function login_look()	//	This loads the /login page, unless the user is l
 
 public function check_reg_input()	//	This controller accepts registration post data from the /login form
 {
-	$this->load->library('form_validation');
-	$this->form_validation->set_rules('login', 'Username', 'trim|required|min_length[2]|max_length[32]');
-	$this->form_validation->set_rules('password', 'Password', 'required|matches[cpassword]|min_length[7]');
-	$this->form_validation->set_rules('cpassword', 'Password Confirmation', 'required');
-	$this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
+	if (defined('INTL_IDNA_VARIANT_UTS46'))
+	{
+		//	this validation set is more thorough but causes errors on some shared hosts
+		//	thus the simplified validations are used by default
+		$this->load->library('form_validation');
+		$this->form_validation->set_rules('login', 'Username', 'trim|required|min_length[2]|max_length[32]');
+		$this->form_validation->set_rules('password', 'Password', 'required|matches[cpassword]|min_length[7]');
+		$this->form_validation->set_rules('cpassword', 'Password Confirmation', 'required');
+		$this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
+	}
+	else
+	{
+		$this->load->library('form_validation');
+		$this->form_validation->set_rules('login', 'Username', 'trim|required');
+		$this->form_validation->set_rules('password', 'Password', 'required|matches[cpassword]');
+		$this->form_validation->set_rules('cpassword', 'Password Confirmation', 'required');
+		$this->form_validation->set_rules('email', 'Email', 'trim|required');
+	}
 
 	if ($this->form_validation->run() == FALSE)
 	{
