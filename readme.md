@@ -7,7 +7,7 @@
 #### inspired by [Gallery](http://galleryproject.org) 3 ####
 ##### released under the [MIT License](LICENSE), copyright 2016-2017 #####
 
-Gallery 4 is for showcasing photography on user-powered web sites.
+Gallery 4 is for showcasing photography on user-powered web sites.  It can be deployed on any hosting platform with robust support for [PHP](http://php.net) and [mySQL](https://www.mysql.com/).  Upload the code, create the database and upload the sql file, and you have a working photostream that you and your friends and audience can accesss and add to from any smartphone or computer.
 
 ### Setup ###
 In order to install Gallery4, create a mySQL database (by default called gallery4) and use the `gallery4.sql` file included in the root of the project folder to set up the schema.  Then copy the code to the root of a web server, after changing the data in <code>[/application/config/config.php](application/config/config.php)</code> to reflect the details of your site.

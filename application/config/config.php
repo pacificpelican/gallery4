@@ -9,7 +9,7 @@ Released under MIT License
 
 /*	Application Info   */
 
-const GALLERY4_VERSION = '0.9.18';               //  gallery4.pacificio.com
+const GALLERY4_VERSION = '0.9.19';               //  gallery4.pacificio.com
 
 const LOVEBIRDS_STORE_VERSION = '0.9.9';		//	lovebird.pacificio.com
 
@@ -18,23 +18,23 @@ const CODEIGNITER_SYSTEM_VERSION = '3.1.6';		//	codeigniter.com
 /*
 ------------------
 */
-if ((PHP_OS !== "Darwin") && (PHP_OS !== "Windows") && (PHP_OS !== "WIN32") && (PHP_OS !== "WINNT"))   //  This is for the live deployement
-{	//	Currently assumes user will develop with Mac OS
-define('SITE_URL', '');	//	Must be the site's address on the web--no trailing slash
-define('DJM_DB_HOST', 'localhost');	//	database host name, maybe localhost
-define('DJM_DB_NAME', 'lovebirdsstore');	//	site database name on the DB server
-define('DJM_DB_USER', 'User');	//	site database user name
-define('DJM_DB_PW', 'HaSH');	//	site database password
-define('DJM_ENVIRONMENT', 'production');		//	set as 'development' or 'production'
+if ((PHP_OS !== "Darwin") && (PHP_OS !== "Windows") && (PHP_OS !== "Windows") && (PHP_OS !== "WIN32") && (PHP_OS !== "WINNT"))   //  This is for the live deployement
+{	//	Currently assumes user will develop with Mac OS or Windows; if you are developing with Linux, replace 'Windows' with 'Linux' above until you go to production
+    define('SITE_URL', '');	//	Must be the site's address on the web--no trailing slash
+    define('DJM_DB_HOST', 'localhost');	//	database host name, maybe localhost
+    define('DJM_DB_NAME', 'lovebirdsstore');	//	site database name on the DB server
+    define('DJM_DB_USER', 'User');	//	site database user name
+    define('DJM_DB_PW', 'HaSH');	//	site database password
+    define('DJM_ENVIRONMENT', 'production');		//	set as 'development' or 'production'
 }
-else    //  This is for the development server
-{	//	Currently assumes user will deploy on Linux [not Mac OS]
-define('SITE_URL', 'http://localhost:8888');	//	Must be the site's address on the local web server--no trailing slash
-define('DJM_DB_HOST', 'localhost');	//	development (local) database host name, maybe localhost
-define('DJM_DB_NAME', 'gallery4');	//	development (local) site database name
-define('DJM_DB_USER', 'root');	//	development (local) site database user name
-define('DJM_DB_PW', 'root');	//	development (local) site database password
-define('DJM_ENVIRONMENT', 'development');		//	set as 'development' or 'production'
+else    //  This is for the development server--assuming it is Linux, FreeBSD or another non-Windows non-Mac system
+{
+    define('SITE_URL', 'http://localhost:8888');	//	Must be the site's address on the local web server--no trailing slash
+    define('DJM_DB_HOST', 'localhost');	//	development (local) database host name, maybe localhost
+    define('DJM_DB_NAME', 'gallery4');	//	development (local) site database name
+    define('DJM_DB_USER', 'root');	//	development (local) site database user name
+    define('DJM_DB_PW', 'root');	//	development (local) site database password
+    define('DJM_ENVIRONMENT', 'development');		//	set as 'development' or 'production'
 }
 
 define('SITE_NAME', 'Photo Gallery');		//	Site name, can be URL w/o https:// or whatever the site is called
@@ -49,7 +49,7 @@ define('FOOTER_URL', 'http://gallery4.pacificio.com');		//	Where the footer butt
 
 define('BLOG_DESCRIPTION', 'A free and open source web gallery software project');		//	Used in RSS feed
 
-$cI_ENC_KEY = 'ada9bfde9fee7b60f9710e0e497b9b2487175493969567';	//	CodeIgniter key - should be unique
+$cI_ENC_KEY = 'a2da4496de2ed1d0d3a5c3616935d08a7aeb8ca0abab9707';	//	CodeIgniter key - should be unique
 
 define('PW_ALGORITHM', 'sha256');	//	The algorithm used to hash passwords ["1 way" hash]
 define('API_ALGORITHM', 'md5');	//	The algorithm used to create user account API keys
