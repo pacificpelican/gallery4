@@ -17,6 +17,17 @@
   footer#account_footer {
     margin-top: 1.25rem;
   }
+  aside.img_caption {
+    max-width: calc(5vw + 135px);
+    white-space: nowrap !important;
+  }
+  aside.img_caption span {
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    max-width: 100%;
+    margin-left: 10px;
+  }
 </style>
 
 <div class="main col-md-9 col-sm-12 column large-11 small-12" id="user_files_list">
@@ -30,9 +41,9 @@
         echo "<section class='oneImage'>";
           echo "<main class='img_holder'>";
             echo "<a class='img_link' href='". SITE_URL . "/image/" . $value['post_title'] . "'><img src='" . DROPBOXS_FILE_PATH_VIA_ROOT . $value['post_title'] . "'></img></a>";
-          echo "</main><aside class='img_caption'>";
+          echo "</main><aside class='img_caption'><span>";
           echo $value['img_title'];
-          echo "</aside>";
+          echo "</span></aside>";
         echo "</section>";
       } 
       ?>

@@ -9,7 +9,7 @@ Released under MIT License
 
 /*	Application Info   */
 
-const GALLERY4_VERSION = '0.9.19';               //  gallery4.pacificio.com
+const GALLERY4_VERSION = '0.9.20';               //  gallery4.pacificio.com
 
 const LOVEBIRDS_STORE_VERSION = '0.9.9';		//	lovebird.pacificio.com
 
