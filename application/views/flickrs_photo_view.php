@@ -246,21 +246,7 @@ div.ACE {
 			</main>
 		</div>
 		<div class="ACCEDE extra translucent">
-		<hr />
-			<div id="fb-root"></div>
-				<script>(function(d, s, id) {
-				var js, fjs = d.getElementsByTagName(s)[0];
-				if (d.getElementById(id)) return;
-				js = d.createElement(s); js.id = id;
-				js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
-				fjs.parentNode.insertBefore(js, fjs);
-				}(document, 'script', 'facebook-jssdk'));
-				</script>
-			<!-- Your share button code -->
-			<div class="fb-share-button" 
-				data-href="<? echo SITE_URL . GALLERYS_FILE_URL . $file_name ?>" 
-				data-layout="button">
-			</div>
+	
 		</div>
 		<div class="DEEDED extra">
 			<main class="content">

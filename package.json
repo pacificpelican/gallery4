@@ -1,0 +1,26 @@
+{
+  "name": "gallery4",
+  "version": "0.9.21",
+  "description": "free web photostream software",
+  "main": "index.php",
+  "scripts": {
+    "test": "null"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pacificpelican/gallery4.git"
+  },
+  "keywords": [
+    "images",
+    "gallery",
+    "PHP",
+    "mySQL",
+    "CodeIgniter"
+  ],
+  "author": "Dan McKeown",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pacificpelican/gallery4/issues"
+  },
+  "homepage": "https://github.com/pacificpelican/gallery4#readme"
+}
