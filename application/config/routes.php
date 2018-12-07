@@ -138,6 +138,7 @@ $route['flickrs/kill/file/(:any)'] = 'flickrs/kill_file/$1';
 $route['flickr'] = 'flickrs/add_file';
 $route['album'] = 'flickrs/files_index';
 $route['image/(:any)'] = 'flickrs/image_view/$1';
+$route['photo/(:any)/(:num)'] = 'flickrs/image_view/$1';
 $route['image/(:any)/JSON'] = 'flickrs/image_view_json/$1';
 $route['add/photocart/(:num)'] = 'gallerys/add_to_cart_process/$1';
 $route['myphotos'] = 'gallerys/myphotos';

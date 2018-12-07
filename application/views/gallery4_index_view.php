@@ -40,7 +40,7 @@
       foreach ($posts_latest_first as $key => $value) {
         echo "<section class='oneImage'>";
           echo "<main class='img_holder'>";
-            echo "<a class='img_link' href='". SITE_URL . "/image/" . $value['post_title'] . "'><img src='" . DROPBOXS_FILE_PATH_VIA_ROOT . $value['post_title'] . "'></img></a>";
+            echo "<a class='img_link' href='". SITE_URL . "/photo/" . $value['post_title'] . "/59063719706064/'><img src='" . DROPBOXS_FILE_PATH_VIA_ROOT . $value['post_title'] . "'></img></a>";
           echo "</main><aside class='img_caption'><span>";
           echo $value['img_title'];
           echo "</span></aside>";
